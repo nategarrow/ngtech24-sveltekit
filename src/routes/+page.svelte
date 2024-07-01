@@ -29,7 +29,7 @@
 
 <Heading>
 	<h2 slot="heading" class="text-3xl font-semibold tracking-widest text-white xl:text-4xl">The Web is Evolving</h2>
-	<div slot="subheading" class="mx-auto max-w-3xl">
+	<div slot="subheading" class="mx-auto max-w-3xl text-lg xl:text-xl">
 		<p>
 			Web development is constantly evolving, and so is my portfolio. I continuously rebuild and update it to stay ahead
 			with the latest technologies and trends, ensuring cutting-edge solutions for every project.
