@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,9 +10,9 @@ const config = {
 		alias: {
 			'@components': 'src/lib/components',
 			'@molecules': 'src/lib/molecules',
-			'@styles': 'src/lib/styles'
-		}
-	}
+			'@styles': 'src/lib/styles',
+		},
+	},
 };
 
 export default config;
