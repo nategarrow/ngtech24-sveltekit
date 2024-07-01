@@ -55,6 +55,7 @@
 		font-family: var(--font-family-text);
 		letter-spacing: 0.03em;
 		font-weight: 300;
+		scroll-behavior: smooth;
 	}
 }
 

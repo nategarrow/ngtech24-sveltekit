@@ -31,7 +31,7 @@
 	const data = testimonialsData;
 </script>
 
-<section class="py-20 lg:py-28">
+<section class="py-20 lg:py-28" id="success-stories">
 	<div class="mx-auto max-w-7xl space-y-12 px-4 text-center lg:space-y-16">
 		<!-- svelte-ignore slot_element_deprecated -->
 		<div class="center-content space-y-3">

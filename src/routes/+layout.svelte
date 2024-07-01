@@ -19,6 +19,6 @@
 		z-index: 100;
 		top: 0;
 		width: 100%;
-		background: linear-gradient(to right, var(--color-red) 35%, var(--color-purple));
+		background: linear-gradient(to right, var(--color-red) 25%, var(--color-purple));
 	}
 </style>

@@ -5,11 +5,11 @@
 <div class="testimonial-card p-8 xl:p-16">
 	<div class="image-wrapper size-24 bg-white lg:size-32"></div>
 	<div class="space-y-4 md:pl-14 lg:space-y-6 xl:pl-8">
-		<p class="flex flex-col gap-2 align-bottom text-xl max-sm:items-end md:flex-row">
+		<p class="flex flex-col gap-4 text-xl md:flex-row md:items-end">
 			<span class="font-medium tracking-wider text-white">{name}</span>
-			<span>{role}, {company}</span>
+			<span class="font-code text-slate align-bottom text-sm">{role}, {company}</span>
 		</p>
-		<div class="text-lg leading-relaxed">
+		<div class="text-lg font-normal leading-relaxed tracking-wide">
 			<p>{testimonial}</p>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 	.testimonial-card {
 		position: relative;
 		background-image: linear-gradient(to bottom right, var(--color-card-background), var(--color-background));
-		border: 4px solid var(--color-purple-light);
+		border: 4px solid var(--color-purple);
 		border-radius: 28px;
 		text-align: left;
 	}
