@@ -1,4 +1,66 @@
 @import 'tailwindcss';
 
+@font-face {
+	font-family: 'Monaspace Argon';
+	src: url('/fonts/MonaspaceArgonVarVF[wght,wdth,slnt].ttf') format('ttf');
+	font-weight: 400;
+	font-style: normal;
+}
+
 @theme {
+	/* *Fonts */
+
+	--font-family-georama: 'Georama Variable', sans-serif;
+	--font-family-monaspace-argon: 'Monaspace Argon', monospace;
+
+	--font-family-title: var(--font-family-georama);
+	--font-family-text: var(--font-family-georama);
+	--font-family-subtitle: var(--font-family-monaspace-argon);
+	--font-family-code: 'Monaspace Argon', monospace;
+
+	--font-family-serif: var(--font-family-title);
+	--font-family-sans: var(--font-family-text);
+	--font-family-mono: var(--font-family-code);
+
+	/* *Colors */
+	--color-white: #ffffff;
+	--color-offwhite: #d9d9d9;
+	--color-slate: #546487;
+
+	--color-red-0: #be123c00;
+	--color-red: #be123c;
+	--color-red-light: #f96388;
+	--color-orange-0: #ff490000;
+	--color-orange: #ff4900;
+	--color-orange-light: #ff895a;
+	--color-blue-0: #14a9f900;
+	--color-blue: #14a9f9;
+	--color-blue-light: #99acd4;
+	--color-purple-0: #7b6db200;
+	--color-purple: #7b6db2;
+	--color-purple-light: #aba2ce;
+
+	--color-background: #04020a;
+
+	--color-card-background-0: #141c3200;
+	--color-card-background: #141c32;
+	--color-card-border: #091024;
+}
+
+@layer base {
+	html {
+		font-size: 18px;
+		background-color: var(--color-background);
+		color: var(--color-offwhite);
+		font-family: var(--font-family-text);
+		letter-spacing: 0.03em;
+		font-weight: 300;
+	}
+}
+
+@layer utilities {
+	.center-content {
+		display: grid;
+		place-items: center;
+	}
 }

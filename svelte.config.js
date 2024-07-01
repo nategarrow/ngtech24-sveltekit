@@ -8,9 +8,9 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter(),
 		alias: {
-			'@components': 'src/lib/components',
-			'@molecules': 'src/lib/molecules',
-			'@styles': 'src/lib/styles',
+			'@components': 'src/lib/components/',
+			'@molecules': 'src/lib/molecules/',
+			'@styles': 'src/lib/styles/',
 		},
 	},
 };
