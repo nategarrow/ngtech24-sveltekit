@@ -1,0 +1,71 @@
+.autoBlur {
+	animation: autoBlurAnimation both;
+	animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation {
+	0% {
+		filter: blur(20px);
+	}
+	40%,
+	60% {
+		filter: blur(0px);
+	}
+	100% {
+		filter: blur(10px);
+	}
+}
+
+.autoSlideLeft {
+	animation: autoSlideLeftAnimation both;
+	animation-timeline: view();
+}
+
+@keyframes autoSlideLeftAnimation {
+	from {
+		transform: translateX(-2%);
+	}
+	60% {
+		transform: translateX(5%);
+	}
+	to {
+		transform: translateX(5%);
+	}
+}
+
+.autoSlideRight {
+	animation: autoSlideRightAnimation both;
+	animation-timeline: view();
+}
+
+@keyframes autoSlideRightAnimation {
+	from {
+		transform: translateX(2%);
+	}
+	60% {
+		transform: translateX(-5%);
+	}
+	to {
+		transform: translateX(-5%);
+	}
+}
+
+.autoSpreadBlurLetters {
+	animation: autoSpreadBlurLettersAnimation both;
+	animation-timeline: view();
+}
+
+@keyframes autoSpreadLettersAnimation {
+	0%,
+	70% {
+		letter-spacing: 0em;
+		opacity: 1;
+		filter: blur(0px);
+	}
+
+	to {
+		letter-spacing: 0.35rem;
+		opacity: 0;
+		filter: blur(10px);
+	}
+}

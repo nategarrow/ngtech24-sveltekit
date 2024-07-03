@@ -39,8 +39,10 @@
 	"dependencies": {
 		"@awesome.me/kit-7afeb9cb5d": "^1.0.7",
 		"@fontsource-variable/georama": "^5.0.21",
+		"@fortawesome/sharp-regular-svg-icons": "^6.5.2",
 		"@tailwindcss/vite": "4.0.0-alpha.16",
 		"bits-ui": "^0.21.11",
+		"svelte-awesome": "^3.3.1",
 		"tailwindcss": "4.0.0-alpha.16"
 	}
 }

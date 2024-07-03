@@ -42,7 +42,7 @@
 			<slot name="subheading" />
 		</div>
 		{#if data?.testimonials}
-			<div class="mx-auto space-y-8 md:max-w-[85%] md:space-y-16 xl:space-y-24 2xl:max-w-full">
+			<div class="mx-auto space-y-8 md:max-w-[80%] md:space-y-16 xl:space-y-24 2xl:max-w-full">
 				{#each data.testimonials as testimonial}
 					<TestimonialCard {...testimonial} />
 				{/each}

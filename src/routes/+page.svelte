@@ -1,6 +1,7 @@
 <script>
 	import Heading from '@components/Heading.svelte';
 	import Hero from '@components/Hero.svelte';
+	import Resume from '@components/Resume/Resume.svelte';
 	import TestimonialList from '@components/Testimonials/TestimonialList.svelte';
 </script>
 
@@ -10,7 +11,7 @@
 		<span class="title-span gradient-text text-4xl xl:text-6xl">Refining the web </span>
 		<span class="title-span gradient-text relative text-5xl lg:-top-3 xl:text-8xl">One pixel at a time</span>
 	</h1>
-	<div slot="description" class="text-lg leading-normal md:text-xl xl:text-2xl">
+	<div slot="description" class="max-w-5xl text-lg leading-normal md:text-xl xl:text-2xl">
 		<p>
 			As a <b class="font-medium text-white">Frontend Web Developer</b>, I weave pixels into captivating experiences.
 			Whether it's crafting elegant interfaces from scratch or breathing life into existing designs, I thrive on turning
@@ -40,6 +41,10 @@
 <TestimonialList badge="Success Stories">
 	<h2 slot="heading" class="font-regular text-4xl tracking-widest text-white sm:text-5xl xl:text-6xl">Testimonials</h2>
 </TestimonialList>
+
+<Resume badge="Down to Business">
+	<h2 slot="heading" class="font-regular text-4xl tracking-widest text-white sm:text-5xl xl:text-6xl">Resume</h2>
+</Resume>
 
 <style>
 	.title-span {

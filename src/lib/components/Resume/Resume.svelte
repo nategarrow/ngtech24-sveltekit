@@ -1,0 +1,127 @@
+<script>
+	import Badge from '@molecules/Badge.svelte';
+	import WorkHistory from './WorkHistory.svelte';
+
+	import Icon from 'svelte-awesome/components/Icon.svelte';
+	import { faLinkedin, faGithub } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
+	import { faPaperPlane } from '@awesome.me/kit-7afeb9cb5d/icons/classic/light';
+
+	/**
+	 * @typedef {Object} Props
+	 * @property {string} [badge] - The optional badge string.
+	 */
+
+	/** @type {Props} */
+	const { badge } = $props();
+</script>
+
+<section class="py-20 lg:py-28" id="success-stories">
+	<div class="mx-auto max-w-7xl space-y-12 px-4 text-center lg:space-y-16">
+		<!-- svelte-ignore slot_element_deprecated -->
+		<div class="center-content space-y-3">
+			{#if badge}
+				<Badge label={badge} />
+			{/if}
+			<slot name="heading" />
+			<slot name="subheading" />
+		</div>
+		<div class="resume-grid text-left">
+			<div class="profile-card">
+				<div class="bg-card-background space-y-6 rounded-xl p-6 lg:p-8">
+					<div class="flex items-center gap-4">
+						<div class="size-20 overflow-hidden rounded-full bg-white">
+							<img src="/images/profile-photo.jpg" alt="Nathan Garrow" />
+						</div>
+						<div class="flex flex-1 flex-col gap-1">
+							<p class="text-2xl font-medium text-white">{`<Nathan Garrow />`}</p>
+							<p class="font-code text-slate text-xs">Frontend Web Developer</p>
+						</div>
+					</div>
+					<div class="social-media">
+						<ul class="space-y-2">
+							<li>
+								<a
+									href="https://linkedin.com/in/nategarrow"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="text-offwhite hover:text-blue-light space-x-2 text-lg"
+								>
+									<Icon data={faLinkedin} class="text-blue-light size-6" /> <span> NateGarrow </span>
+								</a>
+							</li>
+							<li>
+								<button type="button" class="text-offwhite hover:text-blue-light space-x-2 text-lg">
+									<Icon data={faGithub} class="text-blue-light size-6" /> <span>NateGarrow</span>
+								</button>
+							</li>
+							<li>
+								<a
+									href="mailto:nathan+portfolio@nategarrow.tech"
+									class="text-offwhite hover:text-blue-light space-x-2 text-lg"
+								>
+									<Icon data={faPaperPlane} class="text-blue-light size-6" /> <span>nathan@nategarrow.tech</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="flex justify-between gap-4">
+						<button
+							disabled
+							class="bg-blue text-md hover:bg-blue-light disabled:bg-blue-light flex-1 rounded-md py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed disabled:text-white/50"
+						>
+							Download
+						</button>
+						<button
+							disabled
+							class="border-blue text-md hover:border-blue-light disabled:border-blue-light flex-1 rounded-md border-3 py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed"
+						>
+							Share
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="about-me space-y-4 p-6 lg:p-8">
+				<h3 class="text-4xl">About Me</h3>
+				<p class="text-md leading-relaxed lg:text-lg">
+					Passionate and self-taught web developer with 6 years of experience in creating reactive, responsive websites,
+					specializing in NextJS with a growing interest in cutting-edge frameworks like Astro, Svelte(kit), and Remix.
+					Motivated by puzzles and challenges and driven by a love for learning, I thrive in environments where I can
+					tackle complex problems and feel I have ownership over the codebase
+				</p>
+			</div>
+			<div class="resume-content">
+				<div class="bg-card-background min-h-full rounded-xl p-6 lg:p-8">
+					<WorkHistory />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.resume-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, min-content);
+		grid-gap: 12px;
+		align-items: start;
+	}
+
+	@media (min-width: 80rem) {
+		.resume-grid {
+			grid-template-columns: 480px 1fr;
+			grid-template-rows: min-content min-content auto;
+			grid-gap: 32px;
+		}
+		.profile-card {
+			grid-row: 1 / span 1;
+		}
+		.about-me {
+			grid-row: 2 / span 1;
+		}
+		.resume-content {
+			grid-row: 1 / span 3;
+			grid-column: 2 / span 1;
+		}
+	}
+</style>

@@ -22,6 +22,17 @@
 		border: 4px solid var(--color-purple);
 		border-radius: 28px;
 		text-align: left;
+		animation: autoBlurAnimation both;
+		animation-timeline: view();
+
+		@media (width >= 48rem) {
+			&:nth-child(2n + 1) {
+				transform: translateX(-5%);
+			}
+			&:nth-child(2n) {
+				transform: translateX(5%);
+			}
+		}
 	}
 
 	.image-wrapper {

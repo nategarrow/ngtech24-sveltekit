@@ -9,7 +9,6 @@
 
 @theme {
 	/* *Fonts */
-
 	--font-family-georama: 'Georama Variable', sans-serif;
 	--font-family-monaspace-argon: 'Monaspace Argon', monospace;
 
@@ -28,8 +27,8 @@
 	--color-slate: #546487;
 
 	--color-red-0: #be123c00;
-	--color-red: #be123c;
-	--color-red-light: #f96388;
+	--color-red: #de0b31;
+	--color-red-light: #f64565;
 	--color-orange-0: #ff490000;
 	--color-orange: #ff4900;
 	--color-orange-light: #ff895a;
@@ -44,6 +43,7 @@
 
 	--color-card-background-0: #141c3200;
 	--color-card-background: #141c32;
+	--color-card-background-dark: #0d1323;
 	--color-card-border: #091024;
 }
 
