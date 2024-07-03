@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@awesome.me/kit-7afeb9cb5d':
-        specifier: ^1.0.7
-        version: 1.0.7
+        specifier: ^1.0.14
+        version: 1.0.14
       '@fontsource-variable/georama':
         specifier: ^5.0.21
         version: 5.0.21
@@ -94,8 +94,8 @@ packages:
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
 
-  '@awesome.me/kit-7afeb9cb5d@1.0.7':
-    resolution: {integrity: sha512-vzCnRhlzrYk5cveSrqrvCjVJMcR1Y0Aap7wOluo62UMaDPfEYkZt5kcY0kPbKEa4C8L5mdc6Nrxsoi7oOh8UbA==, tarball: https://npm.fontawesome.com/@awesome.me/kit-7afeb9cb5d/-/1.0.7/kit-7afeb9cb5d-1.0.7.tgz}
+  '@awesome.me/kit-7afeb9cb5d@1.0.14':
+    resolution: {integrity: sha512-Ukqe2WUji7wHLXi4q6xKaJWiYtksVxwRsIsz7ROPra8fhjnWWn4JE3tONMQ50e+NgF3qzhLRHuzLeN0o8GUnfA==, tarball: https://npm.fontawesome.com/@awesome.me/kit-7afeb9cb5d/-/1.0.14/kit-7afeb9cb5d-1.0.14.tgz}
     engines: {node: '>=16'}
 
   '@esbuild/aix-ppc64@0.21.5':
@@ -1848,7 +1848,7 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@awesome.me/kit-7afeb9cb5d@1.0.7':
+  '@awesome.me/kit-7afeb9cb5d@1.0.14':
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.5.2
 

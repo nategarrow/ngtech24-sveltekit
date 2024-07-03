@@ -37,7 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@awesome.me/kit-7afeb9cb5d": "^1.0.7",
+		"@awesome.me/kit-7afeb9cb5d": "^1.0.14",
 		"@fontsource-variable/georama": "^5.0.21",
 		"@fortawesome/sharp-regular-svg-icons": "^6.5.2",
 		"@tailwindcss/vite": "4.0.0-alpha.16",

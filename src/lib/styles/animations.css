@@ -1,6 +1,8 @@
 .autoBlur {
-	animation: autoBlurAnimation both;
-	animation-timeline: view();
+	@supports (animation-timeline: view()) {
+		animation: autoBlurAnimation both;
+		animation-timeline: view();
+	}
 }
 
 @keyframes autoBlurAnimation {
@@ -17,8 +19,10 @@
 }
 
 .autoSlideLeft {
-	animation: autoSlideLeftAnimation both;
-	animation-timeline: view();
+	@supports (animation-timeline: view()) {
+		animation: autoSlideLeftAnimation both;
+		animation-timeline: view();
+	}
 }
 
 @keyframes autoSlideLeftAnimation {
@@ -34,8 +38,10 @@
 }
 
 .autoSlideRight {
-	animation: autoSlideRightAnimation both;
-	animation-timeline: view();
+	@supports (animation-timeline: view()) {
+		animation: autoSlideRightAnimation both;
+		animation-timeline: view();
+	}
 }
 
 @keyframes autoSlideRightAnimation {
@@ -51,8 +57,10 @@
 }
 
 .autoSpreadBlurLetters {
-	animation: autoSpreadBlurLettersAnimation both;
-	animation-timeline: view();
+	@supports (animation-timeline: view()) {
+		animation: autoSpreadBlurLettersAnimation both;
+		animation-timeline: view();
+	}
 }
 
 @keyframes autoSpreadLettersAnimation {
