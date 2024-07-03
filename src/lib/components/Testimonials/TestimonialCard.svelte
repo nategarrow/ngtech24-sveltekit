@@ -2,7 +2,7 @@
 	const { id, name, role, company, image, testimonial } = $props();
 </script>
 
-<div class="testimonial-card p-8 xl:p-16">
+<div class="testimonial-card p-3 md:p-8 xl:p-16">
 	<div class="image-wrapper size-24 bg-white lg:size-32"></div>
 	<div class="space-y-4 md:pl-14 lg:space-y-6 xl:pl-8">
 		<p class="flex flex-col gap-4 text-xl md:flex-row md:items-end">
@@ -22,10 +22,11 @@
 		border: 4px solid var(--color-purple);
 		border-radius: 28px;
 		text-align: left;
-		animation: autoBlurAnimation both;
-		animation-timeline: view();
 
 		@media (width >= 48rem) {
+			animation: autoBlurAnimation both;
+			animation-timeline: view();
+
 			&:nth-child(2n + 1) {
 				transform: translateX(-5%);
 			}

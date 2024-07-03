@@ -6,10 +6,12 @@
 </script>
 
 <Hero>
-	<span slot="eyebrow" class="font-code text-slate text-lg tracking-widest xl:text-xl">Nate Garrow</span>
+	<span slot="eyebrow" class="font-code text-slate text-sm tracking-widest sm:text-lg xl:text-xl">Nate Garrow</span>
 	<h1 slot="title" class="flex flex-col font-medium text-transparent">
-		<span class="title-span gradient-text text-4xl xl:text-6xl">Refining the web </span>
-		<span class="title-span gradient-text relative text-5xl lg:-top-3 xl:text-8xl">One pixel at a time</span>
+		<span class="title-span gradient-text text-2xl sm:text-4xl xl:text-6xl">Refining the web </span>
+		<span class="title-span gradient-text relative text-4xl sm:text-5xl lg:-top-3 xl:text-8xl">
+			One pixel at a time
+		</span>
 	</h1>
 	<div slot="description" class="max-w-5xl text-lg leading-normal md:text-xl xl:text-2xl">
 		<p>

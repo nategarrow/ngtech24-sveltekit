@@ -22,19 +22,19 @@
 	--font-family-mono: var(--font-family-code);
 
 	/* *Colors */
-	--color-white: #ffffff;
-	--color-offwhite: #d9d9d9;
+	--color-white: #fffbfe;
+	--color-offwhite: #e1dbd8;
 	--color-slate: #546487;
 
-	--color-red-0: #be123c00;
-	--color-red: #de0b31;
-	--color-red-light: #f64565;
 	--color-orange-0: #ff490000;
 	--color-orange: #ff4900;
 	--color-orange-light: #ff895a;
 	--color-blue-0: #14a9f900;
 	--color-blue: #14a9f9;
 	--color-blue-light: #99acd4;
+	--color-red-0: #be123c00;
+	--color-red: #de0b31;
+	--color-red-light: #f64565;
 	--color-purple-0: #7b6db200;
 	--color-purple: #7b6db2;
 	--color-purple-light: #aba2ce;
@@ -45,6 +45,8 @@
 	--color-card-background: #141c32;
 	--color-card-background-dark: #0d1323;
 	--color-card-border: #091024;
+
+	--width-8xl: 92rem;
 }
 
 @layer base {

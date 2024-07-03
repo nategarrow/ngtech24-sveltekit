@@ -1,5 +1,5 @@
-<section class="hero-gradient center-content min-h-[70svh] py-16 lg:pt-24 lg:pb-20 xl:pt-32">
-	<div class="mx-auto max-w-6xl px-4 text-center">
+<section class="hero-gradient center-content min-h-svh pt-32 pb-16 md:min-h-[80svh] lg:pt-24 lg:pb-20 xl:pt-32">
+	<div class="mx-auto max-w-6xl px-3 text-center">
 		<div class="space-y-6">
 			<slot name="eyebrow" />
 			<slot name="title" />
