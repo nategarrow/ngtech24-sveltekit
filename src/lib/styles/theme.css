@@ -27,17 +27,22 @@
 	--color-slate: #546487;
 
 	--color-orange-0: #ff490000;
+	--color-orange-40: #ff490040;
 	--color-orange: #ff4900;
 	--color-orange-light: #ff895a;
 	--color-blue-0: #14a9f900;
+	--color-blue-40: #14a9f940;
 	--color-blue: #14a9f9;
 	--color-blue-light: #99acd4;
+	--color-purple-0: #7b6db200;
+	--color-purple-40: #7b6db240;
+	--color-purple: #7b6db2;
+	--color-purple-light: #aba2ce;
+
+	/* Unused Colors */
 	--color-red-0: #be123c00;
 	--color-red: #de0b31;
 	--color-red-light: #f64565;
-	--color-purple-0: #7b6db200;
-	--color-purple: #7b6db2;
-	--color-purple-light: #aba2ce;
 
 	--color-background: #04020a;
 
