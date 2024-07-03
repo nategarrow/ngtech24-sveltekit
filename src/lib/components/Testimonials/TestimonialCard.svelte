@@ -19,7 +19,7 @@
 	.testimonial-card {
 		position: relative;
 		background-image: linear-gradient(to bottom right, var(--color-card-background), var(--color-background));
-		border: 4px solid var(--color-purple);
+		border: 4px solid var(--color-blue-light);
 		border-radius: 28px;
 		text-align: left;
 

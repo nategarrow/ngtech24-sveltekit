@@ -1,14 +1,5 @@
 <script>
-	import Badge from '@molecules/Badge.svelte';
 	import TestimonialCard from '@components/Testimonials/TestimonialCard.svelte';
-
-	/**
-	 * @typedef {Object} Props
-	 * @property {string} [badge] - The optional badge string.
-	 */
-
-	/** @type {Props} */
-	const { badge } = $props();
 
 	/**
 	 * @typedef {Object} Testimonial
@@ -26,6 +17,7 @@
 	 */
 
 	import testimonialsData from './testimonial.json';
+	import SectionHeading from '@components/SectionHeading.svelte';
 
 	/** @type {TestimonialsData} */
 	const data = testimonialsData;
@@ -33,14 +25,7 @@
 
 <section class="py-20 lg:py-28" id="success-stories">
 	<div class="mx-auto max-w-7xl space-y-12 px-4 text-center lg:space-y-16">
-		<!-- svelte-ignore slot_element_deprecated -->
-		<div class="center-content space-y-3">
-			{#if badge}
-				<Badge label={badge} />
-			{/if}
-			<slot name="heading" />
-			<slot name="subheading" />
-		</div>
+		<SectionHeading badge="Testimonials" heading="Success Stories" />
 		{#if data?.testimonials}
 			<div class="mx-auto space-y-8 md:max-w-[80%] md:space-y-16 xl:space-y-24 2xl:max-w-full">
 				{#each data.testimonials as testimonial}

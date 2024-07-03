@@ -5,6 +5,7 @@
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faLinkedin, faGithub } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
 	import { faPaperPlane, faDownload, faAt } from '@awesome.me/kit-7afeb9cb5d/icons/sharp/light';
+	import SectionHeading from '@components/SectionHeading.svelte';
 
 	/**
 	 * @typedef {Object} Props
@@ -17,14 +18,7 @@
 
 <section class="py-20 lg:py-28" id="success-stories">
 	<div class="xl:max-w-8xl mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16">
-		<!-- svelte-ignore slot_element_deprecated -->
-		<div class="center-content space-y-3">
-			{#if badge}
-				<Badge label={badge} />
-			{/if}
-			<slot name="heading" />
-			<slot name="subheading" />
-		</div>
+		<SectionHeading badge="Resume" heading="Down to Business" />
 		<div class="resume-grid text-left">
 			<div class="profile-card">
 				<div class="bg-card-background space-y-6 rounded-xl p-3 md:p-6 lg:p-8">
