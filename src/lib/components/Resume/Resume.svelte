@@ -83,10 +83,12 @@
 			<div class="about-me space-y-4 p-6 lg:p-8">
 				<h3 class="text-4xl">About Me</h3>
 				<p class="text-md leading-relaxed lg:text-lg">
-					Passionate and self-taught web developer with 6 years of experience in creating reactive, responsive websites,
-					specializing in NextJS with a growing interest in cutting-edge frameworks like Astro, Svelte(kit), and Remix.
-					Motivated by puzzles and challenges and driven by a love for learning, I thrive in environments where I can
-					tackle complex problems and feel I have ownership over the codebase
+					Passionate and self-taught web developer with 6 years of experience in crafting reactive, responsive websites.
+					I specialize in NextJS and have a growing expertise in cutting-edge frameworks like Astro, Svelte(kit), and
+					Remix. With 4 years of agency experience, I have honed my skills in dynamic and fast-paced environments,
+					delivering high-quality solutions to diverse clients. Driven by puzzles and challenges, and fueled by a deep
+					love for learning, I excel in tackling complex problems and thrive in settings where I can take full ownership
+					of the codebase.
 				</p>
 			</div>
 			<div class="resume-content">

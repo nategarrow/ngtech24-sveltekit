@@ -12,6 +12,11 @@
 
 <style>
 	.hero-gradient {
-		background-image: linear-gradient(to bottom, var(--color-card-background-0), var(--color-card-background));
+		background-image: linear-gradient(
+			to bottom,
+			var(--color-card-background-0),
+			var(--color-card-background) 90%,
+			var(--color-card-background-0)
+		);
 	}
 </style>
