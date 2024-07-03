@@ -50,17 +50,19 @@
 								</a>
 							</li>
 							<li>
-								<button type="button" class="text-offwhite hover:text-blue-light space-x-2 text-lg">
-									<Icon data={faGithub} class="text-blue-light size-6" /> <span>NateGarrow</span>
-								</button>
-							</li>
-							<li>
 								<a
-									href="mailto:nathan+portfolio@nategarrow.tech"
+									href="https://github.com/nategarrow"
+									target="_blank"
+									rel="noopener noreferrer"
 									class="text-offwhite hover:text-blue-light space-x-2 text-lg"
 								>
-									<Icon data={faPaperPlane} class="text-blue-light size-6" /> <span>nathan@nategarrow.tech</span>
+									<Icon data={faGithub} class="text-blue-light size-6" /> <span>NateGarrow</span>
 								</a>
+							</li>
+							<li>
+								<button type="button" class="text-offwhite hover:text-blue-light space-x-2 text-lg">
+									<Icon data={faPaperPlane} class="text-blue-light size-6" /> <span>nathan@nategarrow.tech</span>
+								</button>
 							</li>
 						</ul>
 					</div>
