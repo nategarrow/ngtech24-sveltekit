@@ -3,7 +3,6 @@
 	import type { TestimonialType } from '@lib/types/schema';
 
 	export let testimonials: TestimonialType[] = [];
-	console.log('testimonials:', testimonials);
 
 	import SectionHeading from '@components/SectionHeading.svelte';
 </script>

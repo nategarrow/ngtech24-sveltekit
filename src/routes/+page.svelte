@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Footer from '@components/Footer.svelte';
 	import Heading from '@components/Heading.svelte';
 	import Hero from '@components/Hero.svelte';
 	import Portfolio from '@components/Portfolio/Portfolio.svelte';
@@ -13,7 +14,6 @@
 		testimonials?: TestimonialType[];
 	};
 	let { jobs = [], testimonials = [] }: Props = data;
-	// console.log('testimonials:', testimonials?.length);
 </script>
 
 <Hero>
@@ -24,7 +24,7 @@
 			One Line at a Time
 		</span>
 	</h1>
-	<div slot="description" class="max-w-2xl text-md leading-tight xl:max-w-5xl xl:text-lg">
+	<div slot="description" class="text-md max-w-2xl leading-tight xl:max-w-4xl xl:text-lg">
 		<p>
 			As a <b class="font-medium text-white">Frontend Web Developer</b> driven by a passion for innovation, I specialize
 			in crafting seamless web solutions that elevate user experiences. With meticulous attention to detail and expertise
@@ -61,6 +61,8 @@
 {#if jobs?.length > 0}
 	<Resume {jobs} />
 {/if}
+
+<Footer />
 
 <style>
 	.title-span {

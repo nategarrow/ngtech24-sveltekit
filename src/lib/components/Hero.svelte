@@ -9,7 +9,7 @@
 	 */
 	let activeGradient = $state('default');
 
-	const heroClass = cva('center-content relative min-h-svh pt-32 pb-16 md:min-h-[90svh] lg:pt-24 lg:pb-20 xl:pt-32', {
+	const heroClass = cva('center-content relative min-h-svh pt-32 pb-16 md:min-h-[95svh] lg:pt-24 lg:pb-20 xl:pt-32', {
 		variants: {
 			gradient: {
 				default: 'hero-gradient-default',
@@ -26,7 +26,16 @@
 </script>
 
 <section class={heroClass({ gradient: activeGradient })}>
-	<div class="absolute inset-0 z-[2] size-full">
+	<div class="relative z-10 mx-auto max-w-6xl px-3 text-center">
+		<div class="space-y-6">
+			<slot name="eyebrow" />
+			<slot name="title" />
+			<slot name="description" />
+
+			<slot />
+		</div>
+	</div>
+	<div class="absolute inset-0 z-[2] size-full" aria-hidden="true">
 		<button
 			type="button"
 			onclick={() => (activeGradient = 'react')}
@@ -76,15 +85,6 @@
 		>
 			<Icon data={faReact} class="size-full" />
 		</button>
-	</div>
-	<div class="relative z-10 mx-auto max-w-6xl px-3 text-center">
-		<div class="space-y-6">
-			<slot name="eyebrow" />
-			<slot name="title" />
-			<slot name="description" />
-
-			<slot />
-		</div>
 	</div>
 </section>
 
