@@ -1,6 +1,4 @@
 <script>
-	export const prerender = true;
-
 	import '@styles/theme.css';
 	import '@styles/animations.css';
 	import '@fontsource-variable/georama';
