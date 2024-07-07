@@ -9,8 +9,10 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			'@components': 'src/lib/components/',
+			'@lib': 'src/lib/',
 			'@molecules': 'src/lib/molecules/',
 			'@styles': 'src/lib/styles/',
+			'@types': 'src/lib/types/',
 		},
 	},
 };
