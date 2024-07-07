@@ -9,12 +9,12 @@
 <Hero>
 	<span slot="eyebrow" class="font-code text-slate text-sm tracking-widest sm:text-lg xl:text-xl">Nate Garrow</span>
 	<h1 slot="title" class="flex flex-col font-medium text-transparent">
-		<span class="title-span gradient-text text-2xl sm:text-4xl xl:text-6xl">Enhancing the Web</span>
-		<span class="title-span gradient-text relative text-4xl sm:text-5xl lg:-top-3 xl:text-8xl">
+		<span class="title-span gradient-text text-2xl sm:text-4xl">Enhancing the Web</span>
+		<span class="title-span gradient-text relative text-4xl sm:text-5xl lg:-top-3 xl:text-7xl">
 			One Line at a Time
 		</span>
 	</h1>
-	<div slot="description" class="max-w-5xl text-lg leading-normal md:text-xl xl:text-2xl">
+	<div slot="description" class="max-w-2xl text-lg leading-normal md:text-xl xl:text-2xl xl:max-w-5xl">
 		<p>
 			As a <b class="font-medium text-white">Frontend Web Developer</b> driven by a passion for innovation, I specialize
 			in crafting seamless web solutions that elevate user experiences. With meticulous attention to detail and expertise
