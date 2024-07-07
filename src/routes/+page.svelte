@@ -1,20 +1,19 @@
-<script>
-	import { useQuery } from '@sanity/svelte-loader';
-
-	import { jobQuery, testimonialQuery } from '@lib/sanity/queries';
-
+<script lang="ts">
 	import Heading from '@components/Heading.svelte';
 	import Hero from '@components/Hero.svelte';
 	import Portfolio from '@components/Portfolio/Portfolio.svelte';
 	import Resume from '@components/Resume/Resume.svelte';
 	import TestimonialList from '@components/Testimonials/TestimonialList.svelte';
 
+	import type { JobType, TestimonialType } from '@lib/types/schema';
 	export let data;
-	const { jobInitial, testimonialInitial, options } = data;
-	const jobs = jobInitial && useQuery(jobQuery, options, { jobInitial });
-	console.log('jobs:', jobs);
-	const testimonials = useQuery(testimonialQuery, options, { testimonialInitial });
-	console.log('testimonials:', testimonials);
+
+	type Props = {
+		jobs?: JobType[];
+		testimonials?: TestimonialType[];
+	};
+	let { jobs = [], testimonials = [] }: Props = data;
+	// console.log('testimonials:', testimonials?.length);
 </script>
 
 <Hero>
@@ -25,7 +24,7 @@
 			One Line at a Time
 		</span>
 	</h1>
-	<div slot="description" class="max-w-2xl text-lg leading-normal md:text-xl xl:text-2xl xl:max-w-5xl">
+	<div slot="description" class="max-w-2xl text-md leading-tight xl:max-w-5xl xl:text-lg">
 		<p>
 			As a <b class="font-medium text-white">Frontend Web Developer</b> driven by a passion for innovation, I specialize
 			in crafting seamless web solutions that elevate user experiences. With meticulous attention to detail and expertise
@@ -55,9 +54,13 @@
 
 <Portfolio />
 
-<TestimonialList />
+{#if testimonials?.length > 0}
+	<TestimonialList {testimonials} />
+{/if}
 
-<Resume />
+{#if jobs?.length > 0}
+	<Resume {jobs} />
+{/if}
 
 <style>
 	.title-span {

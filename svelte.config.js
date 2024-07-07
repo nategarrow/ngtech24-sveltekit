@@ -12,6 +12,7 @@ const config = {
 			'@lib': 'src/lib/',
 			'@molecules': 'src/lib/molecules/',
 			'@styles': 'src/lib/styles/',
+			'@types': 'src/lib/types/',
 		},
 	},
 };

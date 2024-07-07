@@ -1,17 +1,22 @@
-<script>
-	const { id, name, role, company, image, testimonial } = $props();
+<script lang="ts">
+	import type { TestimonialType } from '@lib/types/schema';
+	import { PortableText } from '@portabletext/svelte';
+
+	const { id, name, role, company, image, quote }: TestimonialType = $props();
 </script>
 
-<div class="autoBlur testimonial-card p-3 md:p-8 xl:p-16">
+<div id={id || ''} class="autoBlur testimonial-card p-3 md:p-8 xl:p-16">
 	<div class="image-wrapper size-24 bg-white lg:size-32"></div>
 	<div class="space-y-4 md:pl-14 lg:space-y-6 xl:pl-8">
 		<p class="flex flex-col gap-4 text-xl md:flex-row md:items-end">
 			<span class="font-medium tracking-wider text-white">{name}</span>
 			<span class="font-code text-slate align-bottom text-sm">{role}, {company}</span>
 		</p>
-		<div class="text-lg font-normal leading-relaxed tracking-wide">
-			<p>{testimonial}</p>
-		</div>
+		{#if quote}
+			<div class="whitespace-pre-line text-lg font-normal leading-relaxed tracking-wide">
+				<PortableText value={quote} />
+			</div>
+		{/if}
 	</div>
 </div>
 

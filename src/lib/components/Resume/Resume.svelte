@@ -1,5 +1,4 @@
-<script>
-	import Badge from '@molecules/Badge.svelte';
+<script lang="ts">
 	import WorkHistory from './WorkHistory.svelte';
 
 	import Icon from 'svelte-awesome/components/Icon.svelte';
@@ -7,13 +6,11 @@
 	import { faPaperPlane, faDownload, faAt } from '@awesome.me/kit-7afeb9cb5d/icons/sharp/light';
 	import SectionHeading from '@components/SectionHeading.svelte';
 
-	/**
-	 * @typedef {Object} Props
-	 * @property {string} [badge] - The optional badge string.
-	 */
-
-	/** @type {Props} */
-	const { badge } = $props();
+	import type { JobType } from '@lib/types/schema';
+	type Props = {
+		jobs: JobType[];
+	};
+	const { jobs }: Props = $props();
 </script>
 
 <section class="py-20 lg:py-28" id="success-stories">
@@ -108,7 +105,7 @@
 							>Passions</button
 						>
 					</div>
-					<WorkHistory />
+					<WorkHistory {jobs} />
 				</div>
 			</div>
 		</div>

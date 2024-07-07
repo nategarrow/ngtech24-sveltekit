@@ -1,14 +1,12 @@
 import { jobQuery, testimonialQuery } from '$lib/sanity/queries';
+import { client } from '@lib/sanity/client.js';
 
-export const load = async event => {
-	const { loadQuery } = event.locals;
-
-	const jobInitial = await loadQuery(jobQuery);
-	const testimonialInitial = await loadQuery(testimonialQuery);
+export const load = async () => {
+	const jobs = await client.fetch(jobQuery);
+	const testimonials = await client.fetch(testimonialQuery);
 
 	return {
-		jobInitial,
-		testimonialInitial,
-		options: { jobs, testimonials },
+		jobs,
+		testimonials,
 	};
 };
