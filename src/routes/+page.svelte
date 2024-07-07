@@ -1,9 +1,20 @@
 <script>
+	import { useQuery } from '@sanity/svelte-loader';
+
+	import { jobQuery, testimonialQuery } from '@lib/sanity/queries';
+
 	import Heading from '@components/Heading.svelte';
 	import Hero from '@components/Hero.svelte';
 	import Portfolio from '@components/Portfolio/Portfolio.svelte';
 	import Resume from '@components/Resume/Resume.svelte';
 	import TestimonialList from '@components/Testimonials/TestimonialList.svelte';
+
+	export let data;
+	const { jobInitial, testimonialInitial, options } = data;
+	const jobs = jobInitial && useQuery(jobQuery, options, { jobInitial });
+	console.log('jobs:', jobs);
+	const testimonials = useQuery(testimonialQuery, options, { testimonialInitial });
+	console.log('testimonials:', testimonials);
 </script>
 
 <Hero>
