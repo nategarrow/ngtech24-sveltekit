@@ -5,15 +5,6 @@
 	import Portfolio from '@components/Portfolio/Portfolio.svelte';
 	import Resume from '@components/Resume/Resume.svelte';
 	import TestimonialList from '@components/Testimonials/TestimonialList.svelte';
-
-	import type { JobType, TestimonialType } from '@lib/types/schema';
-	export let data;
-
-	type Props = {
-		jobs?: JobType[];
-		testimonials?: TestimonialType[];
-	};
-	let { jobs = [], testimonials = [] }: Props = data;
 </script>
 
 <Hero
@@ -46,12 +37,10 @@
 
 <Portfolio />
 
-{#if testimonials?.length > 0}
+<!-- {#if testimonials?.length > 0}
 	<TestimonialList {testimonials} />
-{/if}
+{/if} -->
 
-{#if jobs?.length > 0}
-	<Resume {jobs} />
-{/if}
+<Resume />
 
 <Footer />

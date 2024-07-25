@@ -1,5 +1,7 @@
 <script lang="ts">
-	import WorkHistory from './WorkHistory.svelte';
+	import WorkHistory from '@components/Resume/WorkHistory.svelte';
+	import Skills from '@components/Resume/Skills.svelte';
+	import Passions from '@components/Resume/Passions.svelte';
 
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faLinkedin, faGithub } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
@@ -7,10 +9,34 @@
 	import SectionHeading from '@components/SectionHeading.svelte';
 
 	import type { JobType } from '@lib/types/schema';
+	import { cva } from 'cva';
 	type Props = {
 		jobs: JobType[];
 	};
-	const { jobs }: Props = $props();
+
+	const ResumeComponents = {
+		history: WorkHistory,
+		skills: Skills,
+		passions: Passions,
+	} as const;
+	type resumeTabs = keyof typeof ResumeComponents;
+
+	let activeTab: resumeTabs = $state('history');
+
+	const resumeTabClass = cva(
+		'cursor-pointer rounded-md border-2 py-1 px-5 sm:inline-block transition-colors duration-150',
+		{
+			variants: {
+				isActive: {
+					true: 'text-white border-orange-light',
+					false: 'text-white/50 border-offwhite/50',
+				},
+			},
+			defaultVariants: {
+				isActive: false,
+			},
+		}
+	);
 </script>
 
 <section class="py-20 lg:py-28" id="success-stories">
@@ -91,21 +117,21 @@
 					<div class="mb-6 hidden w-full flex-col items-center justify-center gap-6 sm:flex sm:flex-row md:gap-8">
 						<button
 							type="button"
-							class="border-orange-light hidden cursor-pointer rounded-md border-2 py-1 px-5 text-white sm:inline-block"
-							>Work</button
+							class={resumeTabClass({ isActive: activeTab === 'history' })}
+							onclick={() => (activeTab = 'history')}>Work</button
 						>
 						<button
 							type="button"
-							class="border-offwhite/50 hidden cursor-not-allowed rounded-md border-2 py-1 px-5 text-white/50 sm:inline-block"
-							>Skills</button
+							class={resumeTabClass({ isActive: activeTab === 'skills' })}
+							onclick={() => (activeTab = 'skills')}>Skills</button
 						>
 						<button
 							type="button"
-							class="border-offwhite/50 hidden cursor-not-allowed rounded-md border-2 py-1 px-5 text-white/50 sm:inline-block"
-							>Passions</button
+							class={resumeTabClass({ isActive: activeTab === 'passions' })}
+							onclick={() => (activeTab = 'passions')}>Passions</button
 						>
 					</div>
-					<WorkHistory {jobs} />
+					<svelte:component this={ResumeComponents[activeTab || 'history']} />
 				</div>
 			</div>
 		</div>
