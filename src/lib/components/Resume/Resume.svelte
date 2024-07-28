@@ -8,15 +8,17 @@
 	import WorkSkills from './WorkSkills.svelte';
 	import WorkHistory from './WorkHistory.svelte';
 
-	import type { JobType } from '@lib/types/schema';
+	import type { JobType, SkillsType } from '@lib/types/schema';
+	import WorkPassions from './WorkPassions.svelte';
 
 	type Props = {
 		jobs: JobType[];
+		skillsList: SkillsType[];
 	};
 
-	const { jobs }: Props = $props();
+	const { jobs, skillsList }: Props = $props();
 
-	let resumeTab = $state('work-history');
+	let resumeTab = $state('history');
 
 	const resumeTabs = cva(
 		'hidden cursor-pointer rounded-md border-2 py-1 px-5 text-white sm:inline-block transition-colors duration-150',
@@ -78,33 +80,34 @@
 							</li>
 						</ul>
 					</div>
-					<div class="flex justify-between gap-4">
-						<button
-							disabled
-							class="bg-orange text-md hover:bg-orange-light disabled:bg-orange-light flex flex-1 items-center justify-center gap-2 rounded-md py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed disabled:text-white/50"
-						>
-							Download
-							<Icon data={faDownload} class="size-4 text-white" />
-						</button>
-						<button
-							disabled
-							class="border-orange text-md hover:border-orange-light disabled:border-orange-light flex flex-1 items-center justify-center gap-2 rounded-md border-3 py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed"
-						>
-							Share
-							<Icon data={faPaperPlane} class="size-4 text-white" />
-						</button>
+					<div class="hidden">
+						<div class="flex justify-between gap-4">
+							<button
+								disabled
+								class="bg-orange text-md hover:bg-orange-light disabled:bg-orange-light flex flex-1 items-center justify-center gap-2 rounded-md py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed disabled:text-white/50"
+							>
+								Download
+								<Icon data={faDownload} class="size-4 text-white" />
+							</button>
+							<button
+								disabled
+								class="border-orange text-md hover:border-orange-light disabled:border-orange-light flex flex-1 items-center justify-center gap-2 rounded-md border-3 py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed"
+							>
+								Share
+								<Icon data={faPaperPlane} class="size-4 text-white" />
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="about-me space-y-4 p-3 md:p-6 lg:p-8">
 				<h3 class="text-4xl">About Me</h3>
 				<p class="text-md leading-relaxed lg:text-lg">
-					Passionate and self-taught web developer with 6 years of experience in crafting reactive, responsive websites.
-					I specialize in NextJS and have a growing expertise in cutting-edge frameworks like Astro, Svelte(kit), and
-					Remix. With 4 years of agency experience, I have honed my skills in dynamic and fast-paced environments,
-					delivering high-quality solutions to diverse clients. Driven by puzzles and challenges, and fueled by a deep
-					love for learning, I excel in tackling complex problems and thrive in settings where I can take full ownership
-					of the codebase.
+					Innovative and driven frontend engineer with over six years of expertise in developing cutting-edge, reactive,
+					and responsive websites for the modern web. Specializing in NextJS, with a keen interest in learning
+					pioneering frameworks such as Astro, Svelte(Kit), and Remix. Known for solving intricate challenges and
+					thriving in dynamic environments where I take ownership of the codebase. Passionate about continuous learning
+					and pushing the boundaries of web development.
 				</p>
 			</div>
 			<div class="resume-content">
@@ -112,8 +115,8 @@
 					<div class="mb-6 hidden w-full flex-col items-center justify-center gap-6 sm:flex sm:flex-row md:gap-8">
 						<button
 							type="button"
-							class={resumeTabs({ active: resumeTab === 'work-history' })}
-							onclick={() => (resumeTab = 'work-history')}
+							class={resumeTabs({ active: resumeTab === 'history' })}
+							onclick={() => (resumeTab = 'history')}
 						>
 							Work
 						</button>
@@ -124,21 +127,24 @@
 						>
 							Skills
 						</button>
-						<button
+						<!-- <button
 							type="button"
 							class={resumeTabs({ active: resumeTab === 'passions' })}
 							onclick={() => (resumeTab = 'passions')}
 						>
 							Passions
-						</button>
+						</button> -->
 					</div>
 
-					<div id="work-history" class="resume-tab" data-visible={resumeTab === 'work-history'}>
+					<div id="history" class="resume-tab" data-visible={resumeTab === 'history'}>
 						<WorkHistory {jobs} />
 					</div>
 					<div id="skills" class="resume-tab" data-visible={resumeTab === 'skills'}>
-						<WorkSkills />
+						<WorkSkills {skillsList} />
 					</div>
+					<!-- <div id="passions" class="resume-tab" data-visible={resumeTab === 'passions'}>
+						<WorkPassions />
+					</div> -->
 				</div>
 			</div>
 		</div>

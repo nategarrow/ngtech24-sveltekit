@@ -6,14 +6,15 @@
 	import Resume from '@components/Resume/Resume.svelte';
 	import TestimonialList from '@components/Testimonials/TestimonialList.svelte';
 
-	import type { JobType, TestimonialType } from '@lib/types/schema';
+	import type { JobType, SkillsType, TestimonialType } from '@lib/types/schema';
 	export let data;
 
 	type Props = {
 		jobs?: JobType[];
 		testimonials?: TestimonialType[];
+		skillsList?: SkillsType[];
 	};
-	let { jobs = [], testimonials = [] }: Props = data;
+	let { jobs = [], testimonials = [], skillsList = [] }: Props = data;
 </script>
 
 <Hero
@@ -23,7 +24,7 @@
 	descriptionText={`<p>
 			As a <b class="font-medium text-white">Frontend Web Developer</b> driven by a passion for innovation, I specialize
 			in crafting seamless web solutions that elevate user experiences. With meticulous attention to detail and expertise
-			in cutting-edge technologies like React, each line of code contributes to a more dynamic and user-friendly digital
+			in cutting-edge technologies like React, Svelte, and Astro, each line of code contributes to a more dynamic and user-friendly digital
 			world.
 		</p>`}
 >
@@ -51,7 +52,7 @@
 {/if}
 
 {#if jobs?.length > 0}
-	<Resume {jobs} />
+	<Resume {jobs} {skillsList} />
 {/if}
 
 <Footer />

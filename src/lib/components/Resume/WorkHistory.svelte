@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { JobType } from '@lib/types/schema';
-	import SingleJob from './SingleJob.svelte';
+	import SingleJob from './Components/SingleJob.svelte';
 
 	type Props = {
 		jobs: JobType[];
