@@ -11,7 +11,7 @@
 	<div class="mx-auto max-w-7xl space-y-12 px-4 text-center lg:space-y-16">
 		<SectionHeading badge="Testimonials" heading="Success Stories" />
 		{#if testimonials}
-			<div class="mx-auto space-y-8 md:max-w-[80%] md:space-y-16 xl:space-y-24 2xl:max-w-full">
+			<div class="md:space-y-16 mx-auto space-y-8 md:max-w-[80%] xl:space-y-24 2xl:max-w-full">
 				{#each testimonials as testimonial}
 					<TestimonialCard {...testimonial} />
 				{/each}

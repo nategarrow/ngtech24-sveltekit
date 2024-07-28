@@ -1,16 +1,37 @@
 <script lang="ts">
-	import WorkHistory from './WorkHistory.svelte';
-
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faLinkedin, faGithub } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
 	import { faPaperPlane, faDownload, faAt } from '@awesome.me/kit-7afeb9cb5d/icons/sharp/light';
 	import SectionHeading from '@components/SectionHeading.svelte';
+	import { cva } from 'cva';
+
+	import WorkSkills from './WorkSkills.svelte';
+	import WorkHistory from './WorkHistory.svelte';
 
 	import type { JobType } from '@lib/types/schema';
+
 	type Props = {
 		jobs: JobType[];
 	};
+
 	const { jobs }: Props = $props();
+
+	let resumeTab = $state('work-history');
+
+	const resumeTabs = cva(
+		'hidden cursor-pointer rounded-md border-2 py-1 px-5 text-white sm:inline-block transition-colors duration-150',
+		{
+			variants: {
+				active: {
+					true: 'border-orange-light',
+					false: 'border-blue-light',
+				},
+			},
+			defaultVariants: {
+				active: false,
+			},
+		}
+	);
 </script>
 
 <section class="py-20 lg:py-28" id="success-stories">
@@ -91,21 +112,33 @@
 					<div class="mb-6 hidden w-full flex-col items-center justify-center gap-6 sm:flex sm:flex-row md:gap-8">
 						<button
 							type="button"
-							class="border-orange-light hidden cursor-pointer rounded-md border-2 py-1 px-5 text-white sm:inline-block"
-							>Work</button
+							class={resumeTabs({ active: resumeTab === 'work-history' })}
+							onclick={() => (resumeTab = 'work-history')}
 						>
+							Work
+						</button>
 						<button
 							type="button"
-							class="border-offwhite/50 hidden cursor-not-allowed rounded-md border-2 py-1 px-5 text-white/50 sm:inline-block"
-							>Skills</button
+							class={resumeTabs({ active: resumeTab === 'skills' })}
+							onclick={() => (resumeTab = 'skills')}
 						>
+							Skills
+						</button>
 						<button
 							type="button"
-							class="border-offwhite/50 hidden cursor-not-allowed rounded-md border-2 py-1 px-5 text-white/50 sm:inline-block"
-							>Passions</button
+							class={resumeTabs({ active: resumeTab === 'passions' })}
+							onclick={() => (resumeTab = 'passions')}
 						>
+							Passions
+						</button>
 					</div>
-					<WorkHistory {jobs} />
+
+					<div id="work-history" class="resume-tab" data-visible={resumeTab === 'work-history'}>
+						<WorkHistory {jobs} />
+					</div>
+					<div id="skills" class="resume-tab" data-visible={resumeTab === 'skills'}>
+						<WorkSkills />
+					</div>
 				</div>
 			</div>
 		</div>
@@ -137,5 +170,9 @@
 			grid-row: 1 / span 3;
 			grid-column: 2 / span 1;
 		}
+	}
+
+	.resume-tab[data-visible='false'] {
+		display: none;
 	}
 </style>
