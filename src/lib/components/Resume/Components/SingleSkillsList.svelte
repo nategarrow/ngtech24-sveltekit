@@ -28,7 +28,7 @@
 		grid-template-columns: 1fr;
 		gap: 8px 12px;
 
-		@media (min-width: 799px) {
+		@media (min-width: 499px) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
