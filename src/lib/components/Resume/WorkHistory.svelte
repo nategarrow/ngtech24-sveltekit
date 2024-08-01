@@ -8,22 +8,22 @@
 
 	let jobList: JobType[] = $state([]);
 
-	$effect(() => {
-		const loadJobs = async () => {
-			const newJobList = (await client.fetch(jobQuery)) || [];
+	const loadJobs = async () => {
+		const newJobList = (await client.fetch(jobQuery)) || [];
+		jobList = newJobList;
+		console.log('jobList:', jobList);
 
-			return newJobList;
-		};
+		return newJobList;
+	};
 
-		jobList = loadJobs();
-	});
+	loadJobs();
 </script>
 
 <div class="work-history space-y-8 lg:space-y-12">
 	<h3 class="text-3xl font-medium lg:text-5xl">Work History</h3>
 	<div class="work-list space-y-10 md:space-y-16">
-		<!-- {#each jobList as job}
+		{#each jobList as job}
 			<SingleJob {...job} />
-		{/each} -->
+		{/each}
 	</div>
 </div>

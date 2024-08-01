@@ -37,9 +37,7 @@
 
 <Portfolio />
 
-<!-- {#if testimonials?.length > 0}
-	<TestimonialList {testimonials} />
-{/if} -->
+<TestimonialList />
 
 <Resume />
 

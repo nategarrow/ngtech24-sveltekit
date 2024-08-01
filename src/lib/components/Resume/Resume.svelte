@@ -11,26 +11,19 @@
 	import type { JobType, SkillsType } from '@lib/types/schema';
 	import WorkPassions from './WorkPassions.svelte';
 
-	type Props = {
-		jobs: JobType[];
-		skillsList: SkillsType[];
-	};
-
-	const { jobs, skillsList }: Props = $props();
-
 	let resumeTab = $state('history');
 
-	const resumeTabs = cva(
+	const resumeTabClass = cva(
 		'hidden cursor-pointer rounded-md border-2 py-1 px-5 text-white sm:inline-block transition-colors duration-150',
 		{
 			variants: {
-				active: {
+				isActive: {
 					true: 'border-orange-light',
 					false: 'border-blue-light',
 				},
 			},
 			defaultVariants: {
-				active: false,
+				isActive: false,
 			},
 		}
 	);
@@ -115,21 +108,20 @@
 					<div class="mb-6 hidden w-full flex-col items-center justify-center gap-6 sm:flex sm:flex-row md:gap-8">
 						<button
 							type="button"
-							class={resumeTabs({ active: resumeTab === 'history' })}
+							class={resumeTabClass({ isActive: resumeTab === 'history' })}
 							onclick={() => (resumeTab = 'history')}
 						>
 							Work
 						</button>
 						<button
 							type="button"
-							class={resumeTabClass({ isActive: activeTab === 'skills' })}
-							onclick={() => (activeTab = 'skills')}>Skills</button
-						>
-							Skills
+							class={resumeTabClass({ isActive: resumeTab === 'skills' })}
+							onclick={() => (resumeTab = 'skills')}
+							>Skills
 						</button>
 						<!-- <button
 							type="button"
-							class={resumeTabs({ active: resumeTab === 'passions' })}
+							class={resumeTabClass({ active: resumeTab === 'passions' })}
 							onclick={() => (resumeTab = 'passions')}
 						>
 							Passions
@@ -137,10 +129,10 @@
 					</div>
 
 					<div id="history" class="resume-tab" data-visible={resumeTab === 'history'}>
-						<WorkHistory {jobs} />
+						<WorkHistory />
 					</div>
 					<div id="skills" class="resume-tab" data-visible={resumeTab === 'skills'}>
-						<WorkSkills {skillsList} />
+						<WorkSkills />
 					</div>
 					<!-- <div id="passions" class="resume-tab" data-visible={resumeTab === 'passions'}>
 						<WorkPassions />

@@ -1,10 +1,21 @@
 <script lang="ts">
-	import TestimonialCard from '@components/Testimonials/TestimonialCard.svelte';
+	import { client } from '@lib/sanity/client';
+	import { testimonialQuery } from '@lib/sanity/queries';
+
 	import type { TestimonialType } from '@lib/types/schema';
 
-	export let testimonials: TestimonialType[] = [];
-
 	import SectionHeading from '@components/SectionHeading.svelte';
+	import TestimonialCard from '@components/Testimonials/TestimonialCard.svelte';
+
+	let testimonials: TestimonialType[] = $state([]);
+	const loadTestimonials = async () => {
+		const newTestimonialsList = (await client.fetch(testimonialQuery)) || [];
+		testimonials = newTestimonialsList;
+
+		return newTestimonialsList;
+	};
+
+	loadTestimonials();
 </script>
 
 <section class="py-20 lg:py-28" id="success-stories">

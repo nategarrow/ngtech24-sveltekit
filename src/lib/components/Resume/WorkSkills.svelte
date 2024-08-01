@@ -1,19 +1,26 @@
 <script lang="ts">
+	import { client } from '@lib/sanity/client';
+	import { skillsQuery } from '@lib/sanity/queries';
 	import SingleSkillsList from './Components/SingleSkillsList.svelte';
 
-	import type { SkillsType } from '@lib/types/schema';
+	let skillsList: any[] = $state([]);
 
-	type Props = {
-		skillsList: SkillsType[];
+	const loadSkills = async () => {
+		const newSkillsList = (await client.fetch(skillsQuery)) || [];
+		console.log('newSkillsList:', newSkillsList);
+		skillsList = newSkillsList;
+
+		return newSkillsList;
 	};
-	let { skillsList }: Props = $props();
+
+	loadSkills();
 </script>
 
-<div class="work-skills space-y-8 lg:space-y-12">
-	{#if skillsList && skillsList?.length > 0}
-		<h3 class="text-3xl font-medium lg:text-5xl">Skills</h3>
+<div class="skills space-y-8 lg:space-y-12">
+	<h3 class="text-3xl font-medium lg:text-5xl">Skills</h3>
+	<div class="work-list space-y-10 md:space-y-16">
 		{#each skillsList as skill}
 			<SingleSkillsList {...skill} />
 		{/each}
-	{/if}
+	</div>
 </div>
