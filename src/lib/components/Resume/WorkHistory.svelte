@@ -11,7 +11,6 @@
 	const loadJobs = async () => {
 		const newJobList = (await client.fetch(jobQuery)) || [];
 		jobList = newJobList;
-		console.log('jobList:', jobList);
 
 		return newJobList;
 	};
