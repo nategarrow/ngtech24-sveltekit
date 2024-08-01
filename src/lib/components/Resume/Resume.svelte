@@ -1,39 +1,36 @@
 <script lang="ts">
-	import WorkHistory from '@components/Resume/WorkHistory.svelte';
-	import Skills from '@components/Resume/Skills.svelte';
-	import Passions from '@components/Resume/Passions.svelte';
-
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faLinkedin, faGithub } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
 	import { faPaperPlane, faDownload, faAt } from '@awesome.me/kit-7afeb9cb5d/icons/sharp/light';
 	import SectionHeading from '@components/SectionHeading.svelte';
-
-	import type { JobType } from '@lib/types/schema';
 	import { cva } from 'cva';
+
+	import WorkSkills from './WorkSkills.svelte';
+	import WorkHistory from './WorkHistory.svelte';
+
+	import type { JobType, SkillsType } from '@lib/types/schema';
+	import WorkPassions from './WorkPassions.svelte';
+
 	type Props = {
 		jobs: JobType[];
+		skillsList: SkillsType[];
 	};
 
-	const ResumeComponents = {
-		history: WorkHistory,
-		skills: Skills,
-		passions: Passions,
-	} as const;
-	type resumeTabs = keyof typeof ResumeComponents;
+	const { jobs, skillsList }: Props = $props();
 
-	let activeTab: resumeTabs = $state('history');
+	let resumeTab = $state('history');
 
-	const resumeTabClass = cva(
-		'cursor-pointer rounded-md border-2 py-1 px-5 sm:inline-block transition-colors duration-150',
+	const resumeTabs = cva(
+		'hidden cursor-pointer rounded-md border-2 py-1 px-5 text-white sm:inline-block transition-colors duration-150',
 		{
 			variants: {
-				isActive: {
-					true: 'text-white border-orange-light',
-					false: 'text-white/50 border-offwhite/50',
+				active: {
+					true: 'border-orange-light',
+					false: 'border-blue-light',
 				},
 			},
 			defaultVariants: {
-				isActive: false,
+				active: false,
 			},
 		}
 	);
@@ -83,33 +80,34 @@
 							</li>
 						</ul>
 					</div>
-					<div class="flex justify-between gap-4">
-						<button
-							disabled
-							class="bg-orange text-md hover:bg-orange-light disabled:bg-orange-light flex flex-1 items-center justify-center gap-2 rounded-md py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed disabled:text-white/50"
-						>
-							Download
-							<Icon data={faDownload} class="size-4 text-white" />
-						</button>
-						<button
-							disabled
-							class="border-orange text-md hover:border-orange-light disabled:border-orange-light flex flex-1 items-center justify-center gap-2 rounded-md border-3 py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed"
-						>
-							Share
-							<Icon data={faPaperPlane} class="size-4 text-white" />
-						</button>
+					<div class="hidden">
+						<div class="flex justify-between gap-4">
+							<button
+								disabled
+								class="bg-orange text-md hover:bg-orange-light disabled:bg-orange-light flex flex-1 items-center justify-center gap-2 rounded-md py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed disabled:text-white/50"
+							>
+								Download
+								<Icon data={faDownload} class="size-4 text-white" />
+							</button>
+							<button
+								disabled
+								class="border-orange text-md hover:border-orange-light disabled:border-orange-light flex flex-1 items-center justify-center gap-2 rounded-md border-3 py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed"
+							>
+								Share
+								<Icon data={faPaperPlane} class="size-4 text-white" />
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="about-me space-y-4 p-3 md:p-6 lg:p-8">
 				<h3 class="text-4xl">About Me</h3>
 				<p class="text-md leading-relaxed lg:text-lg">
-					Passionate and self-taught web developer with 6 years of experience in crafting reactive, responsive websites.
-					I specialize in NextJS and have a growing expertise in cutting-edge frameworks like Astro, Svelte(kit), and
-					Remix. With 4 years of agency experience, I have honed my skills in dynamic and fast-paced environments,
-					delivering high-quality solutions to diverse clients. Driven by puzzles and challenges, and fueled by a deep
-					love for learning, I excel in tackling complex problems and thrive in settings where I can take full ownership
-					of the codebase.
+					Innovative and driven frontend engineer with over six years of expertise in developing cutting-edge, reactive,
+					and responsive websites for the modern web. Specializing in NextJS, with a keen interest in learning
+					pioneering frameworks such as Astro, Svelte(Kit), and Remix. Known for solving intricate challenges and
+					thriving in dynamic environments where I take ownership of the codebase. Passionate about continuous learning
+					and pushing the boundaries of web development.
 				</p>
 			</div>
 			<div class="resume-content">
@@ -117,21 +115,36 @@
 					<div class="mb-6 hidden w-full flex-col items-center justify-center gap-6 sm:flex sm:flex-row md:gap-8">
 						<button
 							type="button"
-							class={resumeTabClass({ isActive: activeTab === 'history' })}
-							onclick={() => (activeTab = 'history')}>Work</button
+							class={resumeTabs({ active: resumeTab === 'history' })}
+							onclick={() => (resumeTab = 'history')}
 						>
+							Work
+						</button>
 						<button
 							type="button"
 							class={resumeTabClass({ isActive: activeTab === 'skills' })}
 							onclick={() => (activeTab = 'skills')}>Skills</button
 						>
-						<button
+							Skills
+						</button>
+						<!-- <button
 							type="button"
-							class={resumeTabClass({ isActive: activeTab === 'passions' })}
-							onclick={() => (activeTab = 'passions')}>Passions</button
+							class={resumeTabs({ active: resumeTab === 'passions' })}
+							onclick={() => (resumeTab = 'passions')}
 						>
+							Passions
+						</button> -->
 					</div>
-					<svelte:component this={ResumeComponents[activeTab || 'history']} />
+
+					<div id="history" class="resume-tab" data-visible={resumeTab === 'history'}>
+						<WorkHistory {jobs} />
+					</div>
+					<div id="skills" class="resume-tab" data-visible={resumeTab === 'skills'}>
+						<WorkSkills {skillsList} />
+					</div>
+					<!-- <div id="passions" class="resume-tab" data-visible={resumeTab === 'passions'}>
+						<WorkPassions />
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -163,5 +176,9 @@
 			grid-row: 1 / span 3;
 			grid-column: 2 / span 1;
 		}
+	}
+
+	.resume-tab[data-visible='false'] {
+		display: none;
 	}
 </style>

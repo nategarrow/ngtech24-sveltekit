@@ -1,6 +1,7 @@
 # Nate Garrow Tech
 
-Welcome to my portfolio website! This project showcases my projects and skills as a frontend developer. The website is built using the latest versions of modern technologies and best practices.
+Welcome to my portfolio website! This project showcases my projects and skills as a frontend developer. The website is
+built using the latest versions of modern technologies and best practices.
 
 ## Technologies Used
 

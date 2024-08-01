@@ -14,7 +14,7 @@
 	descriptionText={`<p>
 			As a <b class="font-medium text-white">Frontend Web Developer</b> driven by a passion for innovation, I specialize
 			in crafting seamless web solutions that elevate user experiences. With meticulous attention to detail and expertise
-			in cutting-edge technologies like React, each line of code contributes to a more dynamic and user-friendly digital
+			in cutting-edge technologies like React, Svelte, and Astro, each line of code contributes to a more dynamic and user-friendly digital
 			world.
 		</p>`}
 >

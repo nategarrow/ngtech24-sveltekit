@@ -1,9 +1,10 @@
 <script lang="ts">
-	import SingleJob from './SingleJob.svelte';
-	import { client } from '@lib/sanity/client.js';
-	import { jobQuery } from '$lib/sanity/queries';
+	import { client } from '@lib/sanity/client';
+	import { jobQuery } from '@lib/sanity/queries';
 
 	import type { JobType } from '@lib/types/schema';
+
+	import SingleJob from './Components/SingleJob.svelte';
 
 	let jobList: JobType[] = $state([]);
 
@@ -14,7 +15,6 @@
 			return newJobList;
 		};
 
-		console.log('effect');
 		jobList = loadJobs();
 	});
 </script>
