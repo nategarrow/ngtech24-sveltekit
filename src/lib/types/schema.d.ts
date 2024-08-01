@@ -16,3 +16,8 @@ export type TestimonialType = {
 	image: string;
 	quote: InputValue;
 };
+
+export type SkillsType = {
+	name: string;
+	skills?: string[];
+};
