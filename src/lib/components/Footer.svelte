@@ -1,5 +1,5 @@
 <footer class="py-12">
-	<div class="relative mx-auto flex max-w-5xl justify-between items-center px-4">
+	<div class="relative mx-auto flex max-w-7xl justify-between items-center px-4">
 		<span class="text-background stretch-left z-10 block max-w-max flex-1 py-3 px-4"
 			>Made with {`<3`} &amp; SvelteKit + Sanity</span
 		>
