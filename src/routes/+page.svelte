@@ -8,24 +8,10 @@
 </script>
 
 <Hero
-	eyebrowText="Nate Garrow"
-	titleTop="Enhancing the Web"
-	titleBottom="One Line at a Time"
-	descriptionText={`<p>
-			As a <b class="font-medium text-white">Frontend Web Developer</b> driven by a passion for innovation, I specialize
-			in crafting seamless web solutions that elevate user experiences. With meticulous attention to detail and expertise
-			in cutting-edge technologies like React, Svelte, and Astro, each line of code contributes to a more dynamic and user-friendly digital
-			world.
-		</p>`}
->
-	<div class="mt-12 mx-auto w-fit">
-		<a
-			href="#success-stories"
-			class="bg-offwhite text-background rounded-md py-2 px-6 text-lg font-medium transition-colors duration-150 hover:bg-white"
-			>Success Stories</a
-		>
-	</div>
-</Hero>
+	eyebrowText="Hello!"
+	titleText="I'm Nathan"
+	descriptionText={`A dedicated <b>Frontend Web Developer</b> specializing in NextJS, TailwindCSS, and Headless CMS integration with six years of total experience, with four years of agency experience.`}
+/>
 
 <Heading
 	headingText="The Web is Evolving"
