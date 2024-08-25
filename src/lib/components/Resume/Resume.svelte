@@ -119,13 +119,6 @@
 							onclick={() => (resumeTab = 'skills')}
 							>Skills
 						</button>
-						<!-- <button
-							type="button"
-							class={resumeTabClass({ active: resumeTab === 'passions' })}
-							onclick={() => (resumeTab = 'passions')}
-						>
-							Passions
-						</button> -->
 					</div>
 
 					<div id="history" class="resume-tab" data-visible={resumeTab === 'history'}>
@@ -134,9 +127,6 @@
 					<div id="skills" class="resume-tab" data-visible={resumeTab === 'skills'}>
 						<WorkSkills />
 					</div>
-					<!-- <div id="passions" class="resume-tab" data-visible={resumeTab === 'passions'}>
-						<WorkPassions />
-					</div> -->
 				</div>
 			</div>
 		</div>

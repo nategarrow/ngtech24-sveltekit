@@ -67,6 +67,10 @@
 		scroll-behavior: smooth;
 	}
 
+	p + p {
+		margin-top: 1rem;
+	}
+
 	b,
 	strong {
 		font-weight: 600;

@@ -77,3 +77,21 @@
 		filter: blur(10px);
 	}
 }
+
+.autoSkillsProgressbar {
+	@supports (animation-timeline: view()) {
+		animation: progressBarAnimation both;
+		animation-timeline: view();
+	}
+}
+
+@keyframes progressBarAnimation {
+	0% {
+		width: 0%;
+	}
+
+	45%,
+	100% {
+		width: var(--skill-progress, 75%);
+	}
+}

@@ -10,7 +10,7 @@
 <Hero
 	eyebrowText="Hello!"
 	titleText="I'm Nathan"
-	descriptionText={`A dedicated <b>Frontend Web Developer</b> specializing in NextJS, TailwindCSS, and Headless CMS integration with six years of total experience, with four years of agency experience.`}
+	descriptionText={`A dedicated <b>Frontend Web Developer</b> specializing in NextJS with a passion for improving the user experience..`}
 />
 
 <Portfolio />

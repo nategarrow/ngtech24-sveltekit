@@ -10,8 +10,8 @@
 			<span class="text-white text-lg font-medium lg:text-xl tracking-wider font-code">Nate Garrow</span>
 			<nav class="hidden md:block">
 				<ul class="text-white text-sm flex gap-4 lg:gap-8">
-					<li><a href="#about" class="hover:text-blue-200 focus-visible:text-blue-200">About Me</a></li>
-					<li><a href="#testimonials" class="hover:text-blue-200 focus-visible:text-blue-200">Success Stories</a></li>
+					<li><a href="#about-me" class="hover:text-blue-200 focus-visible:text-blue-200">About Me</a></li>
+					<li><a href="#success-stories" class="hover:text-blue-200 focus-visible:text-blue-200">Success Stories</a></li>
 				</ul>
 			</nav>
 		</div>

@@ -7,7 +7,6 @@
 
 	const loadSkills = async () => {
 		const newSkillsList = (await client.fetch(skillsQuery)) || [];
-		console.log('newSkillsList:', newSkillsList);
 		skillsList = newSkillsList;
 
 		return newSkillsList;

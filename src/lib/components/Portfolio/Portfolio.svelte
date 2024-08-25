@@ -1,41 +1,41 @@
-<script>
-	import SectionHeading from '@components/SectionHeading.svelte';
-</script>
-
-<section class="py-12 md:py-20">
-	<div class="mx-auto max-w-7xl px-4 flex gap-6">
+<section id="about-me" class="py-12 md:py-20">
+	<div class="mx-auto max-w-6xl px-4 flex gap-6">
 		<div class="flex-1 space-y-2">
 			<h2 class="text-2xl font-medium">About Me</h2>
-			<p class="text-sm">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-				sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis
-				imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh,
-				at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Just for fun, here are some
-				skills progress bars. What do the percentages mean? I don't know, but they look cool!
-			</p>
+			<div class="text-sm">
+				<p>
+					I'm a senior frontend developer from Wichita, Kansas, with 6 years of web experience, including 4 years in
+					agencies. I specialize in creating efficient, user-friendly web solutions. When I'm not coding, you'll find me
+					camping, hiking, mixing sound at church, or exploring new places with my wife.
+				</p>
+				<p>
+					Just for fun, here are some skills progress bars. What do the percentages mean? I don't know, but they look
+					cool!
+				</p>
+			</div>
 			<div class="skills-list flex flex-col gap-4 mt-6">
 				<div class="skill">
 					<span class="font-code text-md block w-full mb-1">HTML5 / CSS3</span>
 					<div class="progress-bar">
-						<div class="progress" style="--skill-progress: 90%;"></div>
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 90%;"></div>
 					</div>
 				</div>
 				<div class="skill">
 					<span class="font-code text-md block w-full mb-1">JavaScript / TypeScript</span>
 					<div class="progress-bar">
-						<div class="progress" style="--skill-progress: 80%;"></div>
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 82%;"></div>
 					</div>
 				</div>
-				<div class="skill">
+				<!-- <div class="skill">
 					<span class="font-code text-md block w-full mb-1">React / NextJS</span>
 					<div class="progress-bar">
-						<div class="progress" style="--skill-progress: 75%;"></div>
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 75%;"></div>
 					</div>
-				</div>
+				</div> -->
 				<div class="skill">
 					<span class="font-code text-md block w-full mb-1">Soft Skills</span>
 					<div class="progress-bar">
-						<div class="progress" style="--skill-progress: 85%;"></div>
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 85%;"></div>
 					</div>
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 			<span>Projects Delivered</span>
 		</div>
 		<div class="flex-1 flex flex-col items-center">
-			<span class="text-4xl font-bold font-code">$400k+</span>
+			<span class="text-4xl font-bold font-code">$600k+</span>
 			<span>Contract Renewals</span>
 		</div>
 	</div>
@@ -64,11 +64,9 @@
 		height: 8px;
 		background: var(--color-white);
 		border-radius: 2rem;
-		overflow: hidden;
 	}
 	.progress {
 		height: 100%;
-		width: var(--skill-progress, 70%);
 		background: var(--color-orange);
 		border-radius: 2rem;
 	}
