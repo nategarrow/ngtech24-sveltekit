@@ -10,8 +10,8 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
 				sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis
 				imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh,
-				at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Just for fun, here's some
-				skills progress bars. What do they mean? I don't know! But they look nice!
+				at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Just for fun, here are some
+				skills progress bars. What do the percentages mean? I don't know, but they look cool!
 			</p>
 			<div class="skills-list flex flex-col gap-4 mt-6">
 				<div class="skill">

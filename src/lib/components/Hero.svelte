@@ -31,7 +31,7 @@
 <section
 	class="hero-gradient-dark center-content relative min-h-[50svh] pt-8 pb-32 md:pb-28 lg:min-h-[60svh] lg:pt-32 lg:pb-56"
 >
-	<div class="relative z-10 max-w-7xl px-3 w-full">
+	<div class="relative z-10 max-w-6xl px-3 w-full">
 		<div class="flex flex-col gap-2 md:gap-8 md:flex-row md:justify-between md:items-center">
 			<div class="flex flex-col flex-1">
 				{@render salutation(eyebrowText)}
