@@ -1,6 +1,6 @@
 <section id="about-me" class="py-12 md:py-20">
-	<div class="mx-auto flex max-w-5xl flex-col gap-6 px-4 md:flex-row lg:gap-10">
-		<div class="flex-1 space-y-2">
+	<div class="mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 md:flex-row lg:gap-10">
+		<div class="w-full flex-1 space-y-2">
 			<h2 class="text-2xl font-medium lg:text-4xl">About Me</h2>
 			<div class="text-md">
 				<p>
@@ -13,45 +13,50 @@
 					but they look cool!
 				</p>
 			</div>
+		</div>
+		<div class="w-full flex-1">
 			<div class="skills-list mt-6 flex flex-col gap-4">
 				<div class="skill">
 					<span class="font-code text-md mb-1 block w-full">HTML5 / CSS3</span>
 					<div class="progress-bar">
-						<div class="progress autoSkillsProgressbar" style="--skill-progress: 90%;"></div>
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 92%;"></div>
 					</div>
 				</div>
 				<div class="skill">
 					<span class="font-code text-md mb-1 block w-full">JavaScript / TypeScript</span>
 					<div class="progress-bar">
-						<div class="progress autoSkillsProgressbar" style="--skill-progress: 82%;"></div>
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 84%;"></div>
 					</div>
 				</div>
 				<div class="skill">
 					<span class="font-code text-md mb-1 block w-full">Soft Skills</span>
 					<div class="progress-bar">
-						<div class="progress autoSkillsProgressbar" style="--skill-progress: 85%;"></div>
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 91%;"></div>
+					</div>
+				</div>
+				<div class="skill">
+					<span class="font-code text-md mb-1 block w-full">Passion for Learning</span>
+					<div class="progress-bar">
+						<div class="progress autoSkillsProgressbar" style="--skill-progress: 100%;"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="flex-1">
-			<div class="flex size-full items-center justify-center rounded-md bg-gray-800">Something cool here</div>
-		</div>
 	</div>
 	<div
-		class="mt-20 mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-6 px-4 md:mt-32 md:flex-row"
+		class="mt-20 mx-auto flex w-full max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-10 px-4 md:mt-32"
 	>
-		<div class="flex flex-1 flex-col items-center">
-			<span class="font-code text-4xl font-bold">6+</span>
+		<div class="flex flex-1 flex-col items-center text-center">
+			<span class="font-code text-4xl font-bold lg:text-5xl">6+</span>
 			<span>Years of Experience</span>
 		</div>
-		<div class="flex flex-1 flex-col items-center">
-			<span class="font-code text-4xl font-bold">100+</span>
+		<div class="flex flex-1 flex-col items-center text-center">
+			<span class="font-code text-4xl font-bold lg:text-5xl">100+</span>
 			<span>Projects Delivered</span>
 		</div>
-		<div class="flex flex-1 flex-col items-center">
-			<span class="font-code text-4xl font-bold">$600k+</span>
-			<span>Contract Renewals</span>
+		<div class="flex flex-1 flex-col items-center text-center">
+			<span class="font-code text-4xl font-bold lg:text-5xl">$600k+</span>
+			<span>Client Contract Renewals</span>
 		</div>
 	</div>
 </section>
@@ -60,12 +65,12 @@
 	.progress-bar {
 		width: 100%;
 		height: 8px;
-		background: var(--color-white);
+		background: var(--color-offwhite);
 		border-radius: 2rem;
 	}
 	.progress {
 		height: 100%;
-		background: var(--color-orange);
+		background: var(--color-blue);
 		border-radius: 2rem;
 	}
 </style>

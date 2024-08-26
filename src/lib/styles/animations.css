@@ -9,8 +9,8 @@
 	0% {
 		filter: blur(20px);
 	}
-	40%,
-	60% {
+	30%,
+	70% {
 		filter: blur(0px);
 	}
 	100% {
@@ -86,11 +86,12 @@
 }
 
 @keyframes progressBarAnimation {
-	0% {
+	0%,
+	40% {
 		width: 0%;
 	}
 
-	45%,
+	40%,
 	100% {
 		width: var(--skill-progress, 75%);
 	}

@@ -56,7 +56,7 @@
 		}
 	}
 
-	@global (.quote-text strong) {
-		color: var(--color-orange);
+	:global(.quote-text strong) {
+		color: var(--color-purple-light);
 	}
 </style>

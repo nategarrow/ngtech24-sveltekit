@@ -59,7 +59,7 @@
 		background-image: linear-gradient(to bottom, var(--color-offwhite) 10%, var(--color-white) 35%, var(--color-slate));
 		line-height: 1.15;
 	}
-	.hero-gradient,
+	/* .hero-gradient, */
 	.hero-gradient-dark {
 		position: relative;
 
@@ -76,9 +76,9 @@
 			z-index: -1;
 		}
 	}
-	.hero-gradient:after {
+	/* .hero-gradient:after {
 		background: linear-gradient(to bottom, #1b3168 10%, #b74618 95%, var(--color-background));
-	}
+	} */
 
 	.hero-gradient-dark:after {
 		background: linear-gradient(
