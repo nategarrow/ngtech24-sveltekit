@@ -18,11 +18,11 @@
 	loadTestimonials();
 </script>
 
-<section class="py-20 lg:py-28" id="success-stories">
+<section id="success-stories" class="py-20 lg:py-28">
 	<div class="mx-auto max-w-7xl space-y-12 px-4 text-center lg:space-y-16">
 		<SectionHeading badge="Testimonials" heading="Success Stories" />
 		{#if testimonials}
-			<div class="md:space-y-16 mx-auto space-y-8 md:max-w-[80%] xl:space-y-24 2xl:max-w-full">
+			<div class="mx-auto space-y-8 md:max-w-[80%] md:space-y-16 xl:space-y-24 2xl:max-w-5xl">
 				{#each testimonials as testimonial}
 					<TestimonialCard {...testimonial} />
 				{/each}

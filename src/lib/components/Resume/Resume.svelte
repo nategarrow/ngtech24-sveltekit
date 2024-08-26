@@ -8,9 +8,6 @@
 	import WorkSkills from './WorkSkills.svelte';
 	import WorkHistory from './WorkHistory.svelte';
 
-	import type { JobType, SkillsType } from '@lib/types/schema';
-	import WorkPassions from './WorkPassions.svelte';
-
 	let resumeTab = $state('history');
 
 	const resumeTabClass = cva(
@@ -30,7 +27,7 @@
 </script>
 
 <section class="py-20 lg:py-28" id="success-stories">
-	<div class="xl:max-w-8xl mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16">
+	<div class="xl:max-w-8xl mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16 xl:max-w-6xl">
 		<SectionHeading badge="Resume" heading="Down to Business" />
 		<div class="resume-grid text-left">
 			<div class="profile-card">
@@ -93,16 +90,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="about-me space-y-4 p-3 md:p-6 lg:p-8">
-				<h3 class="text-4xl">About Me</h3>
-				<p class="text-md leading-relaxed lg:text-lg">
-					Innovative and driven frontend engineer with over six years of expertise in developing cutting-edge, reactive,
-					and responsive websites for the modern web. Specializing in NextJS, with a keen interest in learning
-					pioneering frameworks such as Astro, Svelte(Kit), and Remix. Known for solving intricate challenges and
-					thriving in dynamic environments where I take ownership of the codebase. Passionate about continuous learning
-					and pushing the boundaries of web development.
-				</p>
-			</div>
 			<div class="resume-content">
 				<div class="bg-card-background min-h-full rounded-xl pt-6 px-3 pb-16 md:p-6 lg:p-8">
 					<div class="mb-6 hidden w-full flex-col items-center justify-center gap-6 sm:flex sm:flex-row md:gap-8">
@@ -119,13 +106,6 @@
 							onclick={() => (resumeTab = 'skills')}
 							>Skills
 						</button>
-						<!-- <button
-							type="button"
-							class={resumeTabClass({ active: resumeTab === 'passions' })}
-							onclick={() => (resumeTab = 'passions')}
-						>
-							Passions
-						</button> -->
 					</div>
 
 					<div id="history" class="resume-tab" data-visible={resumeTab === 'history'}>
@@ -134,9 +114,6 @@
 					<div id="skills" class="resume-tab" data-visible={resumeTab === 'skills'}>
 						<WorkSkills />
 					</div>
-					<!-- <div id="passions" class="resume-tab" data-visible={resumeTab === 'passions'}>
-						<WorkPassions />
-					</div> -->
 				</div>
 			</div>
 		</div>

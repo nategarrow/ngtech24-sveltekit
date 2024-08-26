@@ -28,6 +28,7 @@
 
 	--color-orange-0: #ff490000;
 	--color-orange-40: #ff490040;
+	--color-orange-60: #ff4900de;
 	--color-orange: #ff4900;
 	--color-orange-light: #ff895a;
 	--color-blue-0: #14a9f900;
@@ -64,6 +65,15 @@
 		letter-spacing: 0.03em;
 		font-weight: 300;
 		scroll-behavior: smooth;
+	}
+
+	p + p {
+		margin-top: 1rem;
+	}
+
+	b,
+	strong {
+		font-weight: 600;
 	}
 }
 

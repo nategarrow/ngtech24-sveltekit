@@ -14,5 +14,5 @@
 	{#if badge}
 		<Badge label={badge} />
 	{/if}
-	<h2 class="font-regular text-4xl tracking-widest text-white sm:text-5xl xl:text-6xl">{heading}</h2>
+	<h2 class="font-regular text-4xl tracking-widest text-white sm:text-5xl">{heading}</h2>
 </div>
