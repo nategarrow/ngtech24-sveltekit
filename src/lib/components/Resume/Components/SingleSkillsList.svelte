@@ -3,7 +3,7 @@
 		name: string;
 		skills?: string[];
 	};
-  
+
 	let { name, skills }: SkillsProps = $props();
 </script>
 

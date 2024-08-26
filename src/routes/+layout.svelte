@@ -5,13 +5,15 @@
 </script>
 
 <header class="w-full">
-	<div class="gradient-border-bottom max-w-6xl mx-auto">
-		<div class="py-5 max-w-5xl w-full flex justify-between mx-auto px-4 items-center">
-			<span class="text-white text-lg font-medium lg:text-xl tracking-wider font-code">Nate Garrow</span>
+	<div class="gradient-border-bottom mx-auto max-w-6xl">
+		<div class="mx-auto flex w-full max-w-5xl items-center justify-between py-5 px-4">
+			<span class="font-code text-lg font-medium tracking-wider text-white lg:text-xl">Nate Garrow</span>
 			<nav class="hidden md:block">
-				<ul class="text-white text-sm flex gap-4 lg:gap-8">
+				<ul class="flex gap-4 text-sm text-white lg:gap-8">
 					<li><a href="#about-me" class="hover:text-blue-200 focus-visible:text-blue-200">About Me</a></li>
-					<li><a href="#success-stories" class="hover:text-blue-200 focus-visible:text-blue-200">Success Stories</a></li>
+					<li>
+						<a href="#success-stories" class="hover:text-blue-200 focus-visible:text-blue-200">Success Stories</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

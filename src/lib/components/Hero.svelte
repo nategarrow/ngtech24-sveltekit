@@ -13,31 +13,31 @@
 <section
 	class="hero-gradient-dark center-content relative min-h-[50svh] pt-8 pb-32 md:pb-28 lg:min-h-[60svh] lg:pt-32 lg:pb-56"
 >
-	<div class="relative z-10 max-w-5xl px-3 w-full">
-		<div class="grid grid-cols-1 auto-rows-min gap-y-4 items-end md:grid-cols-2">
+	<div class="relative z-10 w-full max-w-5xl px-3">
+		<div class="grid auto-rows-min grid-cols-1 items-end gap-y-4 md:grid-cols-2">
 			<div class="col-span-1">
 				<span class="gradient-text text-xl tracking-widest sm:text-3xl xl:text-4xl">
 					{eyebrowText}
 				</span>
-				<h1 class="flex flex-col font-medium text-5xl lg:text-7xl text-transparent gradient-text leading-none">
+				<h1 class="gradient-text flex flex-col text-5xl font-medium leading-none text-transparent lg:text-7xl">
 					{titleText}
 				</h1>
 			</div>
 
-			<div class="socials flex gap-4 row-start-2">
+			<div class="socials row-start-2 flex gap-4">
 				<a
 					href="https://linkedin.com/in/nategarrow"
 					title="Linkedin"
-					class="border-t border-white pt-1 py-2 hover:border-orange-light"
+					class="hover:border-orange-light border-t border-white py-2 pt-1"
 				>
-					<Icon data={faLinkedin} class="text-blue-200 size-8 lg:size-10 px-2" />
+					<Icon data={faLinkedin} class="size-8 px-2 text-blue-200 lg:size-10" />
 				</a>
 				<a
 					href="https://github.com/nategarrow"
 					title="GitHub"
-					class="border-t border-white pt-1 py-2 hover:border-orange-light"
+					class="hover:border-orange-light border-t border-white py-2 pt-1"
 				>
-					<Icon data={faGithub} class="text-blue-200 size-8 lg:size-10 px-2" />
+					<Icon data={faGithub} class="size-8 px-2 text-blue-200 lg:size-10" />
 				</a>
 			</div>
 
