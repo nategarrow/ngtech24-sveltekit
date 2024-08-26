@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Icon from 'svelte-awesome/components/Icon.svelte';
-	import { faGithub, faLinkedin, faReact } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
+	import { faGithub, faLinkedin } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
 
 	type Props = {
 		eyebrowText: string;
@@ -10,54 +10,41 @@
 	const { eyebrowText, titleText, descriptionText }: Props = $props();
 </script>
 
-{#snippet salutation(eyebrowText: string)}
-	<span class="gradient-text text-xl tracking-widest sm:text-3xl xl:text-4xl">
-		{eyebrowText}
-	</span>
-{/snippet}
-
-{#snippet title(title: string)}
-	<h1 class="flex flex-col font-medium text-5xl lg:text-7xl text-transparent gradient-text leading-none">
-		{title}
-	</h1>
-{/snippet}
-
-{#snippet description(descriptionText: string)}
-	<div class="text-md w-full leading-snug xl:max-w-4xl xl:text-xl">
-		<p>{@html descriptionText}</p>
-	</div>
-{/snippet}
-
 <section
 	class="hero-gradient-dark center-content relative min-h-[50svh] pt-8 pb-32 md:pb-28 lg:min-h-[60svh] lg:pt-32 lg:pb-56"
 >
-	<div class="relative z-10 max-w-6xl px-3 w-full">
-		<div class="flex flex-col gap-2 md:gap-8 md:flex-row md:justify-between md:items-center">
-			<div class="flex flex-col flex-1">
-				{@render salutation(eyebrowText)}
+	<div class="relative z-10 max-w-5xl px-3 w-full">
+		<div class="grid grid-cols-1 auto-rows-min gap-y-4 items-end md:grid-cols-2">
+			<div class="col-span-1">
+				<span class="gradient-text text-xl tracking-widest sm:text-3xl xl:text-4xl">
+					{eyebrowText}
+				</span>
+				<h1 class="flex flex-col font-medium text-5xl lg:text-7xl text-transparent gradient-text leading-none">
+					{titleText}
+				</h1>
+			</div>
 
-				{@render title(titleText)}
-
-				<div class="socials flex gap-4 mt-6">
-					<a
-						href="https://linkedin.com/in/nategarrow"
-						title="Linkedin"
-						class="border-t border-white pt-1 py-2 hover:border-orange-light"
-					>
-						<Icon data={faLinkedin} class="text-blue-200 size-8 lg:size-10 px-2" />
-					</a>
-					<a
-						href="https://github.com/nategarrow"
-						title="GitHub"
-						class="border-t border-white pt-1 py-2 hover:border-orange-light"
-					>
-						<Icon data={faGithub} class="text-blue-200 size-8 lg:size-10 px-2" />
-					</a>
-				</div>
+			<div class="socials flex gap-4 row-start-2">
+				<a
+					href="https://linkedin.com/in/nategarrow"
+					title="Linkedin"
+					class="border-t border-white pt-1 py-2 hover:border-orange-light"
+				>
+					<Icon data={faLinkedin} class="text-blue-200 size-8 lg:size-10 px-2" />
+				</a>
+				<a
+					href="https://github.com/nategarrow"
+					title="GitHub"
+					class="border-t border-white pt-1 py-2 hover:border-orange-light"
+				>
+					<Icon data={faGithub} class="text-blue-200 size-8 lg:size-10 px-2" />
+				</a>
 			</div>
 
 			<div class="max-w-lg flex-1">
-				{@render description(descriptionText)}
+				<div class="text-md w-full leading-snug xl:max-w-4xl xl:text-xl">
+					<p>{@html descriptionText}</p>
+				</div>
 			</div>
 		</div>
 	</div>

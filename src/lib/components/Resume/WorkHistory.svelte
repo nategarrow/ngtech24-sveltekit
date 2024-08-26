@@ -19,7 +19,7 @@
 </script>
 
 <div class="work-history space-y-8 lg:space-y-12">
-	<h3 class="text-3xl font-medium lg:text-5xl">Work History</h3>
+	<h3 class="text-3xl font-medium lg:text-4xl">Work History</h3>
 	<div class="work-list space-y-10 md:space-y-16">
 		{#each jobList as job}
 			<SingleJob {...job} />

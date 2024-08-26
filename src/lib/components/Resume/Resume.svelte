@@ -8,9 +8,6 @@
 	import WorkSkills from './WorkSkills.svelte';
 	import WorkHistory from './WorkHistory.svelte';
 
-	import type { JobType, SkillsType } from '@lib/types/schema';
-	import WorkPassions from './WorkPassions.svelte';
-
 	let resumeTab = $state('history');
 
 	const resumeTabClass = cva(

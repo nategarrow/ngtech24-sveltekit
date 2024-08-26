@@ -16,7 +16,7 @@
 </script>
 
 <div class="skills space-y-8 lg:space-y-12">
-	<h3 class="text-3xl font-medium lg:text-5xl">Skills</h3>
+	<h3 class="text-3xl font-medium lg:text-4xl">Skills</h3>
 	<div class="work-list space-y-10 md:space-y-16">
 		{#each skillsList as skill}
 			<SingleSkillsList {...skill} />

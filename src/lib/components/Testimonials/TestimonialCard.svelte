@@ -13,7 +13,7 @@
 			<span class="font-code text-slate align-bottom text-sm">{role}, {company}</span>
 		</p>
 		{#if quote}
-			<div class="whitespace-pre-line text-lg font-normal leading-relaxed tracking-wide">
+			<div class="quote-text whitespace-pre-line text-lg font-normal leading-relaxed tracking-wide">
 				<PortableText value={quote} />
 			</div>
 		{/if}
@@ -38,6 +38,10 @@
 		}
 	}
 
+	.quote-text {
+		color: var(--color-offwhite);
+	}
+
 	.image-wrapper {
 		border-radius: 50%;
 		overflow: hidden;
@@ -50,5 +54,9 @@
 			transform: translate(-50%, -50%);
 			outline: 12px solid var(--color-background);
 		}
+	}
+
+	@global(.quote-text strong) {
+		color: var(--color-orange);
 	}
 </style>

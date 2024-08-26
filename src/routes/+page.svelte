@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Footer from '@components/Footer.svelte';
-	import Heading from '@components/Heading.svelte';
 	import Hero from '@components/Hero.svelte';
 	import Portfolio from '@components/Portfolio/Portfolio.svelte';
 	import Resume from '@components/Resume/Resume.svelte';
@@ -10,7 +9,7 @@
 <Hero
 	eyebrowText="Hello!"
 	titleText="I'm Nathan"
-	descriptionText={`A dedicated <b>Frontend Web Developer</b> specializing in NextJS with a passion for improving the user experience..`}
+	descriptionText={`A dedicated <b>Frontend Web Developer</b> specializing in NextJS with a passion for improving the user experience from beginning to end.`}
 />
 
 <Portfolio />

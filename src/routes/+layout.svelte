@@ -5,8 +5,8 @@
 </script>
 
 <header class="w-full">
-	<div class="gradient-border-bottom max-w-7xl mx-auto">
-		<div class="py-5 max-w-7xl w-full flex justify-between mx-auto px-4 items-center">
+	<div class="gradient-border-bottom max-w-6xl mx-auto">
+		<div class="py-5 max-w-5xl w-full flex justify-between mx-auto px-4 items-center">
 			<span class="text-white text-lg font-medium lg:text-xl tracking-wider font-code">Nate Garrow</span>
 			<nav class="hidden md:block">
 				<ul class="text-white text-sm flex gap-4 lg:gap-8">
