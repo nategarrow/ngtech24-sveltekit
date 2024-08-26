@@ -70,7 +70,7 @@
 	}
 	.progress {
 		height: 100%;
-		background: var(--color-blue);
+		background: var(--color-orange-light);
 		border-radius: 2rem;
 	}
 </style>
