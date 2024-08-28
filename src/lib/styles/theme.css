@@ -27,10 +27,15 @@
 	--color-slate: #546487;
 
 	--color-orange-0: #ff490000;
-	--color-orange-40: #ff490040;
-	--color-orange-60: #ff4900de;
+	--color-orange-20: #ff895a14;
+	--color-orange-40: #ff490028;
+	--color-orange-60: #ff49003c;
 	--color-orange: #ff4900;
+
+	--color-orange-light-20: #ff895a20;
+	--color-orange-light-40: #ff895a40;
 	--color-orange-light: #ff895a;
+
 	--color-blue-0: #14a9f900;
 	--color-blue-40: #14a9f940;
 	--color-blue: #14a9f9;

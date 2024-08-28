@@ -27,7 +27,7 @@
 </script>
 
 <section class="py-20 lg:py-28" id="success-stories">
-	<div class="xl:max-w-8xl mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16 xl:max-w-6xl">
+	<div class="mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16 xl:max-w-6xl">
 		<SectionHeading badge="Resume" heading="Down to Business" />
 		<div class="resume-grid text-left">
 			<div class="profile-card">
@@ -48,7 +48,7 @@
 									href="https://linkedin.com/in/nategarrow"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="text-offwhite hover:text-blue-light space-x-2 text-lg"
+									class="text-offwhite hover:text-orange-light space-x-2 text-lg"
 								>
 									<Icon data={faLinkedin} class="text-blue-light size-6" /> <span> NateGarrow </span>
 								</a>
@@ -58,13 +58,13 @@
 									href="https://github.com/nategarrow"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="text-offwhite hover:text-blue-light space-x-2 text-lg"
+									class="text-offwhite hover:text-orange-light space-x-2 text-lg"
 								>
 									<Icon data={faGithub} class="text-blue-light size-6" /> <span>NateGarrow</span>
 								</a>
 							</li>
 							<li>
-								<button type="button" class="text-offwhite hover:text-blue-light space-x-2 text-lg">
+								<button type="button" class="text-offwhite hover:text-orange-light space-x-2 text-lg">
 									<Icon data={faAt} class="text-blue-light size-6" /> <span>nathan@nategarrow.tech</span>
 								</button>
 							</li>

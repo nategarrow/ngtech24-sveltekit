@@ -25,19 +25,11 @@
 			</div>
 
 			<div class="socials row-start-2 flex gap-4">
-				<a
-					href="https://linkedin.com/in/nategarrow"
-					title="Linkedin"
-					class="hover:border-orange-light border-t border-white py-2 pt-1"
-				>
-					<Icon data={faLinkedin} class="size-8 px-2 text-blue-200 lg:size-10" />
+				<a href="https://linkedin.com/in/nategarrow" title="Linkedin" class="social-link">
+					<Icon data={faLinkedin} class="size-8 px-2 lg:size-10" />
 				</a>
-				<a
-					href="https://github.com/nategarrow"
-					title="GitHub"
-					class="hover:border-orange-light border-t border-white py-2 pt-1"
-				>
-					<Icon data={faGithub} class="size-8 px-2 text-blue-200 lg:size-10" />
+				<a href="https://github.com/nategarrow" title="GitHub" class="social-link">
+					<Icon data={faGithub} class="size-8 px-2 lg:size-10" />
 				</a>
 			</div>
 
@@ -83,9 +75,28 @@
 	.hero-gradient-dark:after {
 		background: linear-gradient(
 			to bottom,
+			var(--color-blue-40),
 			var(--color-card-background) 10%,
-			var(--color-orange-40) 95%,
+			var(--color-card-background) 40%,
+			var(--color-orange-light-40) 95%,
 			var(--color-background)
 		);
+	}
+
+	.social-link {
+		color: var(--color-orange-light-40);
+		border-top: 1px solid white;
+		padding-block: 0.5rem;
+		transition:
+			color 0.15s ease-in-out,
+			border-color 0.15s ease-in-out;
+
+		&:hover,
+		&:focus-visible {
+			color: var(--color-blue-light);
+			border-color: var(--color-orange-light);
+			color: var(--color-blue-light);
+			outline: none;
+		}
 	}
 </style>
