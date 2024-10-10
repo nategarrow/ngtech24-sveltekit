@@ -35,6 +35,7 @@
 	--color-orange-light-20: #ff895a20;
 	--color-orange-light-40: #ff895a40;
 	--color-orange-light: #ff895a;
+	--color-orange-white: #f9cbbd;
 
 	--color-blue-0: #14a9f900;
 	--color-blue-40: #14a9f940;
@@ -51,6 +52,7 @@
 	--color-red-light: #f64565;
 
 	--color-background: #04020a;
+	--color-background-blue: #0f172a;
 
 	--color-card-background-0: #141c3200;
 	--color-card-background-20: #141c3220;
@@ -70,6 +72,21 @@
 		letter-spacing: 0.03em;
 		font-weight: 300;
 		scroll-behavior: smooth;
+	}
+
+	.bg-static {
+		position: relative;
+		z-index: -1;
+
+		&:after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-image: url(/src/lib/assets/static-square.png);
+			background-size: 128px;
+			background-repeat: repeat;
+			opacity: 0.05;
+		}
 	}
 
 	p + p {

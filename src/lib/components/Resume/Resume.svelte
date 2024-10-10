@@ -2,35 +2,36 @@
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faLinkedin, faGithub } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
 	import { faPaperPlane, faDownload, faAt } from '@awesome.me/kit-7afeb9cb5d/icons/sharp/light';
-	import SectionHeading from '@components/SectionHeading.svelte';
-	import { cva } from 'cva';
 
 	import WorkSkills from './WorkSkills.svelte';
 	import WorkHistory from './WorkHistory.svelte';
 
-	let resumeTab = $state('history');
+	import type { JobType, TestimonialType } from '@lib/types/schema';
 
-	const resumeTabClass = cva(
-		'hidden cursor-pointer rounded-md border-2 py-1 px-5 text-white sm:inline-block transition-colors duration-150',
-		{
-			variants: {
-				isActive: {
-					true: 'border-orange-light',
-					false: 'border-blue-light',
-				},
-			},
-			defaultVariants: {
-				isActive: false,
-			},
-		}
-	);
+	type Props = {
+		experiences: JobType[];
+		skills: {
+			skill: string;
+		}[];
+	};
+
+	let { experiences, skills }: Props = $props();
 </script>
 
-<section class="py-20 lg:py-28" id="success-stories">
+<section class="relative z-[1] py-20 lg:py-28" id="success-stories">
 	<div class="mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16 xl:max-w-6xl">
-		<SectionHeading badge="Resume" heading="Down to Business" />
-		<div class="resume-grid text-left">
-			<div class="profile-card">
+		<div class="resume-grid space-y-24 text-left md:space-y-28">
+			<div class="resume-content">
+				<div class="space-y-12 md:space-y-20">
+					<div id="history" class="resume--work-history">
+						<WorkHistory {experiences} />
+					</div>
+					<div id="skills" class="resume--skills">
+						<WorkSkills {skills} />
+					</div>
+				</div>
+			</div>
+			<div class="profile-card mx-auto w-full max-w-3xl">
 				<div class="bg-card-background space-y-6 rounded-xl p-3 md:p-6 lg:p-8">
 					<div class="flex items-center gap-4">
 						<div class="size-20 overflow-hidden rounded-full bg-white">
@@ -90,32 +91,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="resume-content">
-				<div class="bg-card-background min-h-full rounded-xl pt-6 px-3 pb-16 md:p-6 lg:p-8">
-					<div class="mb-6 hidden w-full flex-col items-center justify-center gap-6 sm:flex sm:flex-row md:gap-8">
-						<button
-							type="button"
-							class={resumeTabClass({ isActive: resumeTab === 'history' })}
-							onclick={() => (resumeTab = 'history')}
-						>
-							Work
-						</button>
-						<button
-							type="button"
-							class={resumeTabClass({ isActive: resumeTab === 'skills' })}
-							onclick={() => (resumeTab = 'skills')}
-							>Skills
-						</button>
-					</div>
-
-					<div id="history" class="resume-tab" data-visible={resumeTab === 'history'}>
-						<WorkHistory />
-					</div>
-					<div id="skills" class="resume-tab" data-visible={resumeTab === 'skills'}>
-						<WorkSkills />
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
@@ -127,27 +102,5 @@
 		grid-template-rows: repeat(3, min-content);
 		grid-gap: 12px;
 		align-items: start;
-	}
-
-	@media (min-width: 80rem) {
-		.resume-grid {
-			grid-template-columns: 480px 1fr;
-			grid-template-rows: min-content min-content auto;
-			grid-gap: 32px;
-		}
-		.profile-card {
-			grid-row: 1 / span 1;
-		}
-		.about-me {
-			grid-row: 2 / span 1;
-		}
-		.resume-content {
-			grid-row: 1 / span 3;
-			grid-column: 2 / span 1;
-		}
-	}
-
-	.resume-tab[data-visible='false'] {
-		display: none;
 	}
 </style>
