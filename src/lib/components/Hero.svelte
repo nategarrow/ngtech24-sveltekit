@@ -21,13 +21,15 @@
 					</span>
 				</div>
 			</div>
-			<div class="text-center">
+			<div class="mb-6 text-center">
 				<h1
 					class="flex flex-col font-medium text-transparent"
 					title="What does this mean? I don't know but it sounds cool!"
 				>
-					<span class="gradient-text text-xl tracking-widest sm:text-3xl xl:text-4xl">Refining the web</span>
-					<span class="gradient-text text-4xl md:text-5xl lg:text-6xl">One pixel at a time</span>
+					<span class="gradient-text text-3xl tracking-widest xl:text-6xl">Redefining the Frontend:</span>
+					<span class="gradient-text text-2xl md:text-3xl lg:text-4xl"
+						>Turning Visions into Vibrant Digital Experiences</span
+					>
 				</h1>
 			</div>
 
@@ -39,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<div class=" mt-12 mx-auto flex w-full max-w-5xl px-8 md:mt-20">
+		<div class=" mt-16 mx-auto flex w-full max-w-5xl px-8 md:mt-24">
 			<div class="icon-group flex w-full flex-wrap justify-around gap-x-2 gap-y-6 sm:gap-x-4 md:gap-8">
 				<div
 					class="border-blue-light icon text-blue shadow-blue/30 hover:text-blue-light size-16 rotate-5 border-4 bg-transparent p-3 shadow-xl md:size-28"
