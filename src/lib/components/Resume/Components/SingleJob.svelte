@@ -11,12 +11,18 @@
 
 <div
 	id={stringToKebabCase(company)}
-	class="work-item grid grid-cols-2 gap-2 border-b border-b-slate-300/50 py-4 px-2 md:px-6 lg:grid-cols-[3fr_1fr]"
+	class="work-item grid auto-rows-min grid-cols-2 items-center gap-2 border-b border-b-slate-300/50 py-4 px-2 md:px-6 lg:grid-cols-[3fr_1fr]"
 >
 	<h4 class="col-span-2 text-xl text-white md:col-span-1 md:col-start-1">{position}</h4>
+	<p class="font-code text-blue text-md md:col-start-2 md:text-right">{company}</p>
 	{#if note}
-		<p class="font-code row-start-2 text-sm text-slate-400 md:col-start-1">{note}</p>
+		<p
+			class="font-code col-span-2 row-start-3 text-sm text-slate-400 md:col-span-1 md:col-start-1 md:row-start-2 md:mt-0"
+		>
+			{note}
+		</p>
 	{/if}
-	<p class="font-code text-blue text-md md:col-start-2">{company}</p>
-	<span class="font-code text-md block w-full rounded-md text-slate-400 md:col-start-2">{duration}</span>
+	<span class="font-code md:text-md block w-full rounded-md text-sm text-slate-400 md:col-start-2 md:text-right"
+		>{duration}</span
+	>
 </div>

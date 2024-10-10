@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { PortableText } from '@portabletext/svelte';
+	import Icon from 'svelte-awesome/components/Icon.svelte';
+	import { faReact } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
 
 	const { heroContent } = $props();
 </script>
@@ -25,7 +27,7 @@
 					title="What does this mean? I don't know but it sounds cool!"
 				>
 					<span class="gradient-text text-xl tracking-widest sm:text-3xl xl:text-4xl">Refining the web</span>
-					<span class="gradient-text text-5xl lg:text-6xl">One pixel at a time</span>
+					<span class="gradient-text text-4xl md:text-5xl lg:text-6xl">One pixel at a time</span>
 				</h1>
 			</div>
 
@@ -34,6 +36,35 @@
 					{#if heroContent}
 						<PortableText value={heroContent} />
 					{/if}
+				</div>
+			</div>
+		</div>
+		<div class=" mt-12 mx-auto flex w-full max-w-5xl px-8 md:mt-20">
+			<div class="icon-group flex w-full flex-wrap justify-around gap-x-2 gap-y-6 sm:gap-x-4 md:gap-8">
+				<div
+					class="border-blue-light icon text-blue shadow-blue/30 hover:text-blue-light size-16 rotate-5 border-4 bg-transparent p-3 shadow-xl md:size-28"
+				>
+					<Icon data={faReact} class="size-full" />
+				</div>
+				<div
+					class="icon text-offwhite size-16 -rotate-15 border-4 border-white bg-transparent p-3 shadow-xl shadow-white/30 hover:text-white md:size-28"
+				>
+					<i class="fa-kit fa-nextjs !size-full"></i>
+				</div>
+				<div
+					class="border-orange-light icon text-orange shadow-orange/30 hover:text-orange-light size-16 border-4 bg-transparent p-3 shadow-xl md:size-28"
+				>
+					<i class="fa-kit fa-svelte !size-full"></i>
+				</div>
+				<div
+					class="border-orange-light icon text-orange shadow-orange/30 hover:text-orange-light size-16 rotate-25 border-4 bg-transparent p-3 shadow-xl md:size-28"
+				>
+					<img src="/images/sanity-icon.svg" alt="Sanity logo" class="size-full" />
+				</div>
+				<div
+					class="border-blue-light icon text-blue shadow-blue/30 hover:text-blue-light size-16 -rotate-5 border-4 bg-transparent p-3 shadow-xl md:size-28"
+				>
+					<i class="fa-kit fa-tailwindcss !size-full"></i>
 				</div>
 			</div>
 		</div>
@@ -54,6 +85,18 @@
 	.gradient-text-dark {
 		background-image: linear-gradient(to bottom, var(--color-card-background) 10%, var(--color-background));
 	}
+	.icon-group {
+		padding-top: 1rem;
+		padding-bottom: 3rem;
+		opacity: 1;
+		mask-image: linear-gradient(
+			to right,
+			var(--color-background-blue-0) 0%,
+			var(--color-background-blue) 12.5%,
+			var(--color-background-blue) 88.5%,
+			var(--color-background-blue-0) 100%
+		);
+	}
 	.hero-gradient-dark {
 		position: relative;
 
@@ -71,6 +114,21 @@
 				var(--color-background) 100%
 			);
 			z-index: -1;
+		}
+	}
+	.icon {
+		transition: all 0.2s ease-in-out;
+		border-radius: 8px;
+		padding: 16px;
+		background-color: var(--color-card-background);
+		opacity: 0.3;
+
+		@media (width >= 40rem) {
+			opacity: 0.75;
+		}
+
+		@media (width >= 64rem) {
+			opacity: 1;
 		}
 	}
 </style>

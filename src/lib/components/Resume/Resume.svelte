@@ -18,7 +18,7 @@
 	let { experiences, skills }: Props = $props();
 </script>
 
-<section class="relative z-[1] py-20 lg:py-28" id="success-stories">
+<section class="relative z-[1] py-20" id="success-stories">
 	<div class="mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16 xl:max-w-6xl">
 		<div class="resume-grid space-y-24 text-left md:space-y-28">
 			<div class="resume-content">
@@ -32,14 +32,16 @@
 				</div>
 			</div>
 			<div class="profile-card mx-auto w-full max-w-3xl">
-				<div class="bg-card-background space-y-6 rounded-xl p-3 md:p-6 lg:p-8">
+				<div
+					class="bg-card-background flex flex-col gap-4 rounded-xl p-3 md:flex-row md:items-center md:gap-8 md:p-6 lg:p-12"
+				>
 					<div class="flex items-center gap-4">
 						<div class="size-20 overflow-hidden rounded-full bg-white">
 							<img src="/images/profile-photo.jpg" alt="Nathan Garrow" />
 						</div>
-						<div class="flex flex-1 flex-col gap-1">
+						<div class="flex flex-1 flex-col gap-2">
 							<p class="text-xl font-medium text-white md:text-2xl">{`<Nathan Garrow />`}</p>
-							<p class="font-code text-slate text-xs">Frontend Web Developer</p>
+							<p class="font-code text-slate mt-0 text-xs">Frontend Web Developer</p>
 						</div>
 					</div>
 					<div class="social-media">
@@ -71,7 +73,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="hidden">
+					<!-- <div class="hidden">
 						<div class="flex justify-between gap-4">
 							<button
 								disabled
@@ -88,7 +90,7 @@
 								<Icon data={faPaperPlane} class="size-4 text-white" />
 							</button>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
