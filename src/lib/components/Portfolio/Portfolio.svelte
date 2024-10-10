@@ -15,7 +15,7 @@
 <section id="about-me" class="relative z-[1] py-12">
 	<div class="mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 md:flex-row lg:gap-10">
 		<div class="w-full flex-1 space-y-2 text-center">
-			<h2 class="text-2xl font-medium lg:text-4xl">Hey, I'm Nate!</h2>
+			<h2 class="text-2xl font-medium lg:text-4xl">About Me</h2>
 			<div class="text-md mx-auto max-w-prose">
 				{#if aboutContent}
 					<PortableText value={aboutContent} />
