@@ -6,6 +6,7 @@ export type JobType = {
 	startDate: string;
 	endDate?: string;
 	description?: InputValue;
+	note?: string;
 };
 
 export type TestimonialType = {

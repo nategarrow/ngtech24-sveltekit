@@ -1,27 +1,18 @@
 <script lang="ts">
-	import { client } from '@lib/sanity/client';
-	import { jobQuery } from '@lib/sanity/queries';
+	import SingleJob from '@components/Resume/Components/SingleJob.svelte';
 
 	import type { JobType } from '@lib/types/schema';
 
-	import SingleJob from './Components/SingleJob.svelte';
-
-	let jobList: JobType[] = $state([]);
-
-	const loadJobs = async () => {
-		const newJobList = (await client.fetch(jobQuery)) || [];
-		jobList = newJobList;
-
-		return newJobList;
+	type Props = {
+		experiences: JobType[];
 	};
-
-	loadJobs();
+	const { experiences }: Props = $props();
 </script>
 
-<div class="work-history space-y-8 lg:space-y-12">
-	<h3 class="text-3xl font-medium lg:text-4xl">Work History</h3>
-	<div class="work-list space-y-10 md:space-y-16">
-		{#each jobList as job}
+<div class="work-history space-y-8 lg:space-y-6">
+	<h3 class="text-3xl font-medium lg:text-3xl">Experience</h3>
+	<div class="work-list">
+		{#each experiences as job}
 			<SingleJob {...job} />
 		{/each}
 	</div>

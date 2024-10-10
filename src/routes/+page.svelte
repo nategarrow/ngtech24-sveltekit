@@ -4,18 +4,18 @@
 	import Portfolio from '@components/Portfolio/Portfolio.svelte';
 	import Resume from '@components/Resume/Resume.svelte';
 	import TestimonialList from '@components/Testimonials/TestimonialList.svelte';
+
+	export let data;
+	const { homeData } = data;
+	const { heroContent, aboutContent, aboutStats, experiences, skills, testimonials } = homeData?.[0];
 </script>
 
-<Hero
-	eyebrowText="Hello!"
-	titleText="I'm Nathan"
-	descriptionText={`A dedicated <b>Frontend Web Developer</b> specializing in NextJS with a passion for improving the user experience from beginning to end.`}
-/>
+<Hero {heroContent} />
 
-<Portfolio />
+<Portfolio {aboutContent} {aboutStats} />
 
-<TestimonialList />
+<Resume {experiences} {skills} />
 
-<Resume />
+<TestimonialList {testimonials} />
 
 <Footer />

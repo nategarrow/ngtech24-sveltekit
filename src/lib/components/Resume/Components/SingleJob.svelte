@@ -1,26 +1,28 @@
 <script lang="ts">
 	import type { JobType } from '@lib/types/schema';
 	import { stringToKebabCase } from '@lib/utils/textFunctions';
-	import { PortableText } from '@portabletext/svelte';
 
-	let { id, position, company, startDate, endDate, description }: JobType = $props();
+	let { id, position, company, startDate, endDate, note }: JobType = $props();
 	const startYear = startDate && new Date(startDate).getFullYear();
 	const endYear = endDate && new Date(endDate).getFullYear();
 
 	const duration = startYear && endYear ? `${startYear} - ${endYear}` : `${startYear} - Present`;
 </script>
 
-<div id={stringToKebabCase(company)} class="work-item flex flex-col gap-4 md:flex-row lg:gap-6">
-	<div class="md:w-1/3">
-		<span class="font-code bg-card-background-dark text-md block w-full rounded-md py-1 px-3">{duration}</span>
-	</div>
-	<div class="space-y-1 md:w-2/3">
-		<h4 class="text-2xl text-white">{position}</h4>
-		<p class="font-code text-blue text-md">{company}</p>
-		{#if description}
-			<div class="text-md whitespace-pre-line">
-				<PortableText value={description} />
-			</div>
-		{/if}
-	</div>
+<div
+	id={stringToKebabCase(company)}
+	class="work-item grid auto-rows-min grid-cols-2 items-center gap-2 border-b border-b-slate-300/50 py-4 px-2 md:px-6 lg:grid-cols-[3fr_1fr]"
+>
+	<h4 class="col-span-2 text-xl text-white md:col-span-1 md:col-start-1">{position}</h4>
+	<p class="font-code text-blue text-md md:col-start-2 md:text-right">{company}</p>
+	{#if note}
+		<p
+			class="font-code col-span-2 row-start-3 text-sm text-slate-400 md:col-span-1 md:col-start-1 md:row-start-2 md:mt-0"
+		>
+			{note}
+		</p>
+	{/if}
+	<span class="font-code md:text-md block w-full rounded-md text-sm text-slate-400 md:col-start-2 md:text-right"
+		>{duration}</span
+	>
 </div>

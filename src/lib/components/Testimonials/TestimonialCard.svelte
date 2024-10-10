@@ -6,57 +6,32 @@
 </script>
 
 <div id={id || ''} class="autoBlur testimonial-card p-3 md:p-8 xl:p-16">
-	<div class="image-wrapper size-24 bg-white lg:size-32"></div>
-	<div class="space-y-4 md:pl-14 lg:space-y-6 xl:pl-8">
-		<p class="flex flex-col gap-4 text-xl md:flex-row md:items-end">
-			<span class="font-medium tracking-wider text-white">{name}</span>
-			<span class="font-code text-slate align-bottom text-sm">{role}, {company}</span>
-		</p>
+	<div class="space-y-4 lg:space-y-6">
 		{#if quote}
 			<div class="quote-text whitespace-pre-line text-lg font-normal leading-relaxed tracking-wide">
 				<PortableText value={quote} />
 			</div>
 		{/if}
+		<div class="flex items-center gap-4">
+			<div class="image-wrapper size-12 rounded-full bg-white lg:size-16"></div>
+			<p class="flex flex-col gap-2 text-xl">
+				<span class="font-medium tracking-wider text-white">{name}</span>
+				<span class="font-code text-slate align-bottom text-sm">{role}, {company}</span>
+			</p>
+		</div>
 	</div>
 </div>
 
 <style>
 	.testimonial-card {
-		position: relative;
-		background-image: linear-gradient(to bottom right, var(--color-card-background), var(--color-background));
-		border: 4px solid var(--color-blue-light);
-		border-radius: 28px;
-		text-align: left;
-
-		@media (width >= 48rem) {
-			&:nth-child(2n + 1) {
-				transform: translateX(-5%);
-			}
-			&:nth-child(2n) {
-				transform: translateX(5%);
-			}
-		}
+		flex: 1 45%;
 	}
 
 	.quote-text {
 		color: var(--color-offwhite);
 	}
 
-	.image-wrapper {
-		border-radius: 50%;
-		overflow: hidden;
-		margin-bottom: 2rem;
-
-		@media (min-width: 768px) {
-			position: absolute;
-			top: 0;
-			left: 0;
-			transform: translate(-50%, -50%);
-			outline: 12px solid var(--color-background);
-		}
-	}
-
 	:global(.quote-text strong) {
-		color: var(--color-purple-light);
+		color: var(--color-orange-white);
 	}
 </style>
