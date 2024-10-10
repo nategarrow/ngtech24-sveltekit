@@ -15,21 +15,19 @@
 				<div class="aspect-square w-24 overflow-hidden rounded-full bg-gray-300 md:w-28">
 					<img src="/images/profile-photo.jpg" alt="Nathan Garrow" />
 				</div>
-				<div class="relative -top-4 rounded-md bg-gray-300 py-0.5 px-2 text-center md:py-1 md:px-3">
+				<!-- <div class="relative -top-4 rounded-md bg-gray-300 py-0.5 px-2 text-center md:py-1 md:px-3">
 					<span class="font-code gradient-text-dark text-md font-medium tracking-widest sm:text-xl xl:text-2xl">
 						Nate Garrow
 					</span>
-				</div>
+				</div> -->
 			</div>
 			<div class="mb-6 text-center">
 				<h1
 					class="flex flex-col font-medium text-transparent"
 					title="What does this mean? I don't know but it sounds cool!"
 				>
-					<span class="gradient-text text-3xl tracking-widest xl:text-6xl">Redefining the Frontend:</span>
-					<span class="gradient-text text-2xl md:text-3xl lg:text-4xl"
-						>Turning Visions into Vibrant Digital Experiences</span
-					>
+					<span class="gradient-text text-3xl tracking-widest xl:text-6xl">Nate Garrow</span>
+					<span class="gradient-text text-2xl md:text-3xl lg:text-4xl">Senior Frontend Web Developer</span>
 				</h1>
 			</div>
 
