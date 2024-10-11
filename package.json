@@ -54,6 +54,7 @@
 		"bits-ui": "^0.21.11",
 		"cva": "npm:class-variance-authority@^0.7.0",
 		"groq": "^3.49.0",
+		"motion": "^10.18.0",
 		"svelte-awesome": "^3.3.1",
 		"tailwind-merge": "^2.4.0",
 		"tailwindcss": "4.0.0-alpha.16"
