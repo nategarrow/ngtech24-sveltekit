@@ -41,7 +41,7 @@
 						</div>
 						<div class="flex flex-1 flex-col gap-2">
 							<p class="text-xl font-medium text-white md:text-2xl">{`<Nathan Garrow />`}</p>
-							<p class="font-code text-slate mt-0 text-xs">Frontend Web Developer</p>
+							<p class="font-code text-blue-light mt-0 text-xs">Frontend Web Developer</p>
 						</div>
 					</div>
 					<div class="social-media">
@@ -73,24 +73,6 @@
 							</li>
 						</ul>
 					</div>
-					<!-- <div class="hidden">
-						<div class="flex justify-between gap-4">
-							<button
-								disabled
-								class="bg-orange text-md hover:bg-orange-light disabled:bg-orange-light flex flex-1 items-center justify-center gap-2 rounded-md py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed disabled:text-white/50"
-							>
-								Download
-								<Icon data={faDownload} class="size-4 text-white" />
-							</button>
-							<button
-								disabled
-								class="border-orange text-md hover:border-orange-light disabled:border-orange-light flex flex-1 items-center justify-center gap-2 rounded-md border-3 py-2 px-6 text-center font-medium text-white transition-colors duration-150 disabled:cursor-not-allowed"
-							>
-								Share
-								<Icon data={faPaperPlane} class="size-4 text-white" />
-							</button>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
