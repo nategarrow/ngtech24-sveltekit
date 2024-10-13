@@ -1,8 +1,9 @@
 export const projects = [
 	{
 		id: 1,
-		title: 'Deepgram',
+		title: 'Documenting the AI Boom',
 		subtitle: 'something really cool I did for Deepgram. AI Apps, Glossary, Optimization, etc.',
+		client: 'Deepgram',
 		stats: [
 			{
 				id: 'stat-1',
@@ -23,6 +24,7 @@ export const projects = [
 		title: 'Semgrep',
 		subtitle:
 			'something really cool I did for Semgrep. Site rebuild, refactor from Styled Components to Tailwind, etc.',
+		client: 'Semgrep',
 		stats: [
 			{
 				id: 'stat-1',
@@ -43,6 +45,7 @@ export const projects = [
 		title: 'Arcesium',
 		subtitle:
 			'something really cool I did for Arcesium. Tech lead of 3 contractors with a tight deadline, launched on time with continued support, etc.',
+		client: 'Arcesium',
 		stats: [
 			{
 				id: 'stat-1',

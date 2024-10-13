@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import { animate, inView } from 'motion';
 	import { PortableText } from '@portabletext/svelte';
-	import type { EasingFunction } from 'svelte/transition';
 
 	type Props = {
 		aboutContent: any;
