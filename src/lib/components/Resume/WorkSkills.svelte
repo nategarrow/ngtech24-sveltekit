@@ -7,7 +7,7 @@
 	const { skills }: Props = $props();
 </script>
 
-<div class="skills space-y-8">
+<div class="skills mx-auto w-full max-w-4xl space-y-8">
 	<h3 class="text-3xl font-medium lg:text-3xl">Skills</h3>
 	<div class="skills-list flex flex-wrap gap-3">
 		{#each skills as skill}
