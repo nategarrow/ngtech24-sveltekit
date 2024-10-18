@@ -42,4 +42,5 @@
 			</button>
 		{/each}
 	</div>
+	<p class="text-offwhite/50">(Hint: Feel free to drag them around!)</p>
 </div>
