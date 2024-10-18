@@ -42,7 +42,7 @@
 					<Icon data={faReact} class="size-full" />
 				</div>
 				<div
-					class="icon text-offwhite size-16 -rotate-15 border-4 border-white bg-transparent p-3 shadow-xl shadow-white/30 hover:text-white md:size-28"
+					class="icon text-offwhite border-purple-light size-16 -rotate-15 border-4 bg-transparent p-3 shadow-xl shadow-white/30 hover:text-white md:size-28"
 				>
 					<i class="fa-kit fa-nextjs !size-full"></i>
 				</div>
@@ -52,14 +52,14 @@
 					<i class="fa-kit fa-svelte !size-full"></i>
 				</div>
 				<div
-					class="border-orange-light icon text-orange shadow-orange/30 hover:text-orange-light size-16 rotate-25 border-4 bg-transparent p-3 shadow-xl md:size-28"
-				>
-					<img src="/images/sanity-icon.svg" alt="Sanity logo" class="size-full" />
-				</div>
-				<div
 					class="border-blue-light icon text-blue shadow-blue/30 hover:text-blue-light size-16 -rotate-5 border-4 bg-transparent p-3 shadow-xl md:size-28"
 				>
 					<i class="fa-kit fa-tailwindcss !size-full"></i>
+				</div>
+				<div
+					class="border-orange-light icon text-orange shadow-orange/30 hover:text-orange-light size-16 rotate-25 border-4 bg-transparent p-3 shadow-xl md:size-28"
+				>
+					<img src="/images/sanity-icon.svg" alt="Sanity logo" class="size-full" />
 				</div>
 			</div>
 		</div>
