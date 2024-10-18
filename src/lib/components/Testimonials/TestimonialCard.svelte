@@ -2,7 +2,7 @@
 	import type { TestimonialType } from '@lib/types/schema';
 	import { PortableText } from '@portabletext/svelte';
 
-	const { id, name, role, company, image, quote }: TestimonialType = $props();
+	const { id, name, role, company, imageUrl, quote }: TestimonialType = $props();
 </script>
 
 <div id={id || ''} class="autoBlur testimonial-card p-3 md:p-8 xl:p-16">
@@ -13,7 +13,11 @@
 			</div>
 		{/if}
 		<div class="flex items-center gap-4">
-			<div class="image-wrapper size-12 rounded-full bg-white lg:size-16"></div>
+			<div class="image-wrapper grid size-12 place-items-center overflow-hidden rounded-full bg-white p-3 lg:size-16">
+				{#if imageUrl}
+					<img src={imageUrl} alt={name} class="size-full" />
+				{/if}
+			</div>
 			<p class="flex flex-col gap-2 text-xl">
 				<span class="font-medium tracking-wider text-white">{name}</span>
 				<span class="font-code text-slate align-bottom text-sm">{role}, {company}</span>
