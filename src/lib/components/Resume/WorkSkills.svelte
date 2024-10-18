@@ -12,7 +12,7 @@
 
 	const flipDurationMs = 300;
 	const dropTargetStyle = { outline: 'none' };
-	let items: Item[] = $state(skills.map(({ skill }) => ({ id: stringToRandomNumber(skill), name: skill })));
+	let items: Item[] = $state(skills);
 
 	function handleDndConsider(e: CustomEvent<DndEvent>) {
 		items = e.detail.items;
