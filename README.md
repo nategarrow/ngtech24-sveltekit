@@ -19,6 +19,7 @@ developer. The website is built using the latest versions of modern technologies
 - Connected projects to Sanity and updated content
 - Added Drag and Drop functionality to skills and updated Sanity model
 - Refined styles - font styles, colors, etc.
+- Updated README
 
 ### October 14
 
