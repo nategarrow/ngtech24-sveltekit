@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { flip } from 'svelte/animate';
 	import { dndzone, type Item, type DndEvent } from 'svelte-dnd-action';
-	import { stringToRandomNumber } from '@lib/utils/textFunctions';
 
 	type Props = {
 		skills: {
-			skill: string;
+			id: string;
+			name: string;
 		}[];
 	};
 	let { skills }: Props = $props();

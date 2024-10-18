@@ -22,10 +22,7 @@
 				</div> -->
 			</div>
 			<div class="mb-6 text-center">
-				<h1
-					class="flex flex-col font-medium text-transparent"
-					title="What does this mean? I don't know but it sounds cool!"
-				>
+				<h1 class="flex flex-col font-medium text-transparent">
 					<span class="gradient-text text-3xl tracking-widest xl:text-6xl">Nate Garrow</span>
 					<span class="gradient-text text-2xl md:text-3xl lg:text-4xl">Senior Frontend Web Developer</span>
 				</h1>
