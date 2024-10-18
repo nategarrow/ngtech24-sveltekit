@@ -9,7 +9,7 @@
 <div id="success-stories" class="relative z-[1]">
 	<div class="mx-auto max-w-7xl space-y-12 px-4 lg:space-y-16">
 		{#if testimonials}
-			<div class="mx-auto flex flex-wrap gap-6">
+			<div class="mx-auto flex flex-col flex-wrap gap-6 md:flex-row">
 				{#each testimonials as testimonial}
 					<TestimonialCard {...testimonial} />
 				{/each}
