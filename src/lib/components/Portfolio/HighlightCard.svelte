@@ -6,31 +6,43 @@
 		i: number;
 	};
 
-	const { id, title, client, description, stats, featuredImageUrl, projectLink, agencyLink, i }: Props = $props();
-	console.log('client:', client);
+	const {
+		id,
+		title,
+		client,
+		description,
+		techStack,
+		stats,
+		featuredImageUrl,
+		projectLink,
+		agencyLink,
+		customColor,
+		i,
+	}: Props = $props();
 
 	const cardStyles = cva('project-thumbnail-shadow', {
 		variants: {
-			cardIndex: {
-				Deepgram: 'bg-red-light/25',
-				Semgrep: 'bg-green-200/35',
-				'Granite Properties': 'bg-blue-light/35',
-				'TCU: Van Cliburn Concert Hall': 'bg-purple/30',
+			shadowColor: {
+				default: 'bg-blue-light/35',
+				red: 'bg-red-light/25',
+				green: 'bg-green-200/35',
+				blue: 'bg-blue-light/35',
+				purple: 'bg-purple/30',
 			},
 		},
 		defaultVariants: {
-			cardIndex: 'Deepgram',
+			shadowColor: 'default',
 		},
 	});
 </script>
 
 <div
 	id={client}
-	class="project-card shadow-blue/30 sticky mx-auto w-full max-w-4xl rounded-lg shadow-2xl"
+	class="project-card shadow-blue/30 mx-auto w-full max-w-4xl rounded-lg shadow-2xl md:sticky"
 	style={`top: ${i * 40}px`}
 >
 	<div
-		class="bg-card-background/70 border-orange-light/30 relative overflow-hidden rounded-lg border-[0.5px] py-10 px-6 backdrop-blur-lg lg:px-12"
+		class="bg-card-background/70 border-orange-light/30 relative overflow-hidden rounded-lg border-[0.5px] py-10 px-4 backdrop-blur-lg lg:px-12"
 	>
 		<div
 			class="relative z-10 grid size-full grid-cols-1 gap-8 text-white md:grid-cols-[2fr_1.5fr] md:flex-row md:gap-12"
@@ -38,10 +50,18 @@
 			<div class="md:row-span-2">
 				<div class="flex h-full flex-col justify-between gap-8">
 					<div>
-						<h3 class="text-2xl font-medium text-white md:text-3xl">{title}</h3>
-						<p class="text-offwhite mt-4 text-sm md:text-base">
+						<h3 class="font-code text-2xl font-medium tracking-tight text-white md:text-2xl">{title}</h3>
+						<p class="text-offwhite mt-4 text-base">
 							{description}
 						</p>
+						{#if techStack}
+							<div class="mt-4 flex flex-wrap gap-2">
+								<p class="text-base">
+									<span class="font-georama font-semibold tracking-widest">Technologies: </span>
+									<span class="tech-tag font-code font-light">{techStack}</span>
+								</p>
+							</div>
+						{/if}
 					</div>
 					{#if projectLink?.current || agencyLink?.current}
 						<div class="flex flex-col gap-4 text-center md:flex-row md:text-left">
@@ -69,7 +89,11 @@
 						<img src={featuredImageUrl} alt={title} class="h-full w-full object-cover" />
 					{/if}
 				</div>
-				<div class={cardStyles({ cardIndex: client })}></div>
+				<div
+					class={cardStyles({
+						shadowColor: customColor,
+					})}
+				></div>
 			</div>
 			<div class="md:col-start-2">
 				<div class="flex flex-col gap-4">

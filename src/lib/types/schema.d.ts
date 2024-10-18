@@ -14,6 +14,7 @@ export type ProjectsProps = {
 	title: string;
 	client: string;
 	description: string;
+	techStack?: string;
 	stats: {
 		id: string;
 		label: string;
@@ -26,6 +27,7 @@ export type ProjectsProps = {
 	agencyLink?: {
 		current?: string;
 	};
+	customColor?: 'default' | 'red' | 'green' | 'blue' | 'purple';
 };
 
 export type TestimonialType = {

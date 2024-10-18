@@ -41,7 +41,7 @@
 						</div>
 						<div class="flex flex-1 flex-col gap-2">
 							<p class="text-xl font-medium text-white md:text-2xl">{`<Nathan Garrow />`}</p>
-							<p class="font-code text-blue-light mt-0 text-xs">Frontend Web Developer</p>
+							<p class="font-code text-blue-light mt-0 text-xs">Senior Frontend Web Developer</p>
 						</div>
 					</div>
 					<div class="social-media">

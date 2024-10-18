@@ -9,10 +9,12 @@ export const homeQuery = groq`*[_type == "HomePage"]{
     title,
     client,
     description,
+    techStack,
     stats,
     "featuredImageUrl": featuredImage.asset->url,
     projectLink,
-    agencyLink
+    agencyLink,
+    customColor
   },
   experiences[]->{
     position,
