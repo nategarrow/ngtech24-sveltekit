@@ -29,14 +29,17 @@
 		use:dndzone={{ items, flipDurationMs, dropTargetStyle }}
 		onconsider={handleDndConsider}
 		onfinalize={handleDndFinalize}
+		tabindex="-1"
 	>
 		{#each items as item (item.id)}
-			<div
+			<button
+				type="button"
 				animate:flip={{ duration: flipDurationMs }}
 				class="border-offwhite bg-blue-light/10 hover:bg-blue-light/20 md:text-md rounded-sm border py-0.5 px-2 text-sm text-blue-50 transition-all duration-150 xl:text-lg"
+				tabindex="-1"
 			>
 				{item.name}
-			</div>
+			</button>
 		{/each}
 	</div>
 </div>

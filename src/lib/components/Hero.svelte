@@ -6,9 +6,7 @@
 	const { heroContent } = $props();
 </script>
 
-<section
-	class="hero-gradient-dark center-content relative min-h-[50svh] pt-8 pb-32 md:pb-28 lg:min-h-[60svh] lg:pt-32 lg:pb-56"
->
+<section class="hero-gradient-dark center-content relative pt-8 pb-32 md:pb-28 lg:pt-32">
 	<div class="relative z-10 w-full max-w-5xl px-3">
 		<div class="mx-auto grid auto-rows-min grid-cols-1 items-center gap-y-4">
 			<div class="flex flex-col items-center justify-center">
@@ -69,7 +67,6 @@
 </section>
 
 <style>
-	.gradient-text-dark,
 	.gradient-text {
 		background-clip: text;
 		-webkit-background-clip: text;
@@ -79,9 +76,7 @@
 	.gradient-text {
 		background-image: linear-gradient(to bottom, var(--color-offwhite) 10%, var(--color-white) 35%, var(--color-slate));
 	}
-	.gradient-text-dark {
-		background-image: linear-gradient(to bottom, var(--color-card-background) 10%, var(--color-background));
-	}
+
 	.icon-group {
 		padding-top: 1rem;
 		padding-bottom: 3rem;

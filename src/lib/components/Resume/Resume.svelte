@@ -32,9 +32,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="profile-card mx-auto w-full max-w-3xl">
+			<div class="profile-card relative mx-auto w-full max-w-3xl">
 				<div
-					class="bg-card-background flex flex-col gap-4 rounded-xl p-3 md:flex-row md:items-center md:gap-8 md:p-6 lg:p-12"
+					class="bg-card-background shadow-blue-light/10 flex flex-col gap-4 rounded-xl p-3 shadow-2xl md:flex-row md:items-center md:gap-8 md:p-6 lg:p-12"
 				>
 					<div class="flex items-center gap-4">
 						<div class="size-20 overflow-hidden rounded-full bg-white">
@@ -52,7 +52,7 @@
 									href="https://linkedin.com/in/nategarrow"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="text-offwhite hover:text-orange-light space-x-2 text-lg"
+									class="text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
 								>
 									<Icon data={faLinkedin} class="text-blue-light size-6" /> <span> NateGarrow </span>
 								</a>
@@ -62,15 +62,15 @@
 									href="https://github.com/nategarrow"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="text-offwhite hover:text-orange-light space-x-2 text-lg"
+									class="text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
 								>
 									<Icon data={faGithub} class="text-blue-light size-6" /> <span>NateGarrow</span>
 								</a>
 							</li>
 							<li>
-								<button type="button" class="text-offwhite hover:text-orange-light space-x-2 text-lg">
+								<span class="text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg">
 									<Icon data={faAt} class="text-blue-light size-6" /> <span>nathan@nategarrow.tech</span>
-								</button>
+								</span>
 							</li>
 						</ul>
 					</div>
