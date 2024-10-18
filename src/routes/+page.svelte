@@ -9,14 +9,14 @@
 
 	export let data;
 	const { homeData } = data;
-	const { heroContent, aboutContent, aboutStats, experiences, skills, testimonials } = homeData?.[0];
+	const { heroContent, aboutContent, aboutStats, projectHighlights, experiences, skills, testimonials } = homeData?.[0];
 </script>
 
 <Hero {heroContent} />
 
 <AboutMe {aboutContent} {aboutStats} />
 
-<Portfolio />
+<Portfolio {projectHighlights} />
 
 <Resume {experiences} {skills} />
 

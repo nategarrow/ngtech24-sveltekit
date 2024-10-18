@@ -18,7 +18,7 @@
 	let { experiences, skills }: Props = $props();
 </script>
 
-<section class="relative z-[1] py-12" id="success-stories">
+<section class="relative z-[1] py-12">
 	<div class="mx-auto space-y-12 px-4 text-center md:max-w-[90%] lg:space-y-16 xl:max-w-6xl">
 		<div class="resume-grid space-y-24 text-left md:space-y-28">
 			<div class="resume-content">

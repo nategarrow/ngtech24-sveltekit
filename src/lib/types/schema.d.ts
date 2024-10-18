@@ -9,12 +9,31 @@ export type JobType = {
 	note?: string;
 };
 
+export type ProjectsProps = {
+	id: string;
+	title: string;
+	client: string;
+	description: string;
+	stats: {
+		id: string;
+		label: string;
+		value: string;
+	}[];
+	featuredImageUrl: string;
+	projectLink?: {
+		current?: string;
+	};
+	agencyLink?: {
+		current?: string;
+	};
+};
+
 export type TestimonialType = {
 	id?: string;
 	name: string;
 	role: string;
 	company: string;
-	image: string;
+	imageUrl: string;
 	quote: InputValue;
 };
 

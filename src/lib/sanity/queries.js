@@ -4,6 +4,16 @@ export const homeQuery = groq`*[_type == "HomePage"]{
   heroContent,
   aboutContent,
   aboutStats,
+  projectHighlights[]->{
+    id,
+    title,
+    client,
+    description,
+    stats,
+    "featuredImageUrl": featuredImage.asset->url,
+    projectLink,
+    agencyLink
+  },
   experiences[]->{
     position,
     company,
@@ -17,7 +27,7 @@ export const homeQuery = groq`*[_type == "HomePage"]{
     name,
     role,
     company,
-    image,
+    "imageUrl": image.asset->url,
     quote
   }
 }`;
