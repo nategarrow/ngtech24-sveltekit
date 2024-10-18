@@ -120,6 +120,9 @@ importers:
       svelte-check:
         specifier: ^3.6.0
         version: 3.8.4(postcss-load-config@3.1.4(postcss@8.4.39))(postcss@8.4.39)(svelte@5.0.0-next.168)
+      svelte-dnd-action:
+        specifier: ^0.9.51
+        version: 0.9.51(svelte@5.0.0-next.168)
       typescript:
         specifier: ^5.0.0
         version: 5.5.2
@@ -2116,6 +2119,11 @@ packages:
     hasBin: true
     peerDependencies:
       svelte: ^3.55.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
+
+  svelte-dnd-action@0.9.51:
+    resolution: {integrity: sha512-/0DEK+QqWf6QYtJgbQPJE/LSzo6JAE00oWVtBWZrBDAMXeN4cYVd0Z7sSpbu00Sm/h03t/RF4UGUMwosmrseQw==}
+    peerDependencies:
+      svelte: '>=3.23.0 || ^5.0.0-next.0'
 
   svelte-eslint-parser@0.39.2:
     resolution: {integrity: sha512-87UwLuWTtDIuzWOhOi1zBL5wYVd07M5BK1qZ57YmXJB5/UmjUNJqGy3XSOhPqjckY1dATNV9y+mx+nI0WH6HPA==}
@@ -4254,6 +4262,10 @@ snapshots:
       - sass
       - stylus
       - sugarss
+
+  svelte-dnd-action@0.9.51(svelte@5.0.0-next.168):
+    dependencies:
+      svelte: 5.0.0-next.168
 
   svelte-eslint-parser@0.39.2(svelte@5.0.0-next.168):
     dependencies:

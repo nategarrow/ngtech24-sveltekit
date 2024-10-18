@@ -4,7 +4,6 @@
 
 	onMount(() => {
 		const titleH3 = document.getElementById('and-more');
-		console.log('titleH3:', titleH3);
 		if (titleH3) {
 			scroll(animate(titleH3, { scale: [2, 1], opacity: [0.75, 0.75, 1] }), {
 				target: titleH3,
