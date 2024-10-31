@@ -3,8 +3,17 @@
 	import '@styles/animations.css';
 	import '@fontsource-variable/georama';
 
+	import { onMount } from 'svelte';
+	import { injectSpeedInsights } from '@vercel/speed-insights';
+	import { inject } from '@vercel/analytics';
+
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faGithub, faLinkedin } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
+
+	onMount(() => {
+		injectSpeedInsights();
+		inject();
+	});
 </script>
 
 <header class="w-full">
