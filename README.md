@@ -14,6 +14,10 @@ developer. The website is built using the latest versions of modern technologies
 
 ## Changelog
 
+### October 31
+
+- Added Resume
+
 ### October 18
 
 - Connected projects to Sanity and updated content

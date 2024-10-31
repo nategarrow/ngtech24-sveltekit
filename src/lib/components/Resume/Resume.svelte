@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from 'svelte-awesome/components/Icon.svelte';
 	import { faLinkedin, faGithub } from '@awesome.me/kit-7afeb9cb5d/icons/classic/brands';
-	import { faPaperPlane, faDownload, faAt } from '@awesome.me/kit-7afeb9cb5d/icons/sharp/light';
+	import { faAt, faDownload } from '@awesome.me/kit-7afeb9cb5d/icons/sharp/light';
 
 	import WorkSkills from './WorkSkills.svelte';
 	import WorkHistory from './WorkHistory.svelte';
@@ -46,13 +46,13 @@
 						</div>
 					</div>
 					<div class="social-media">
-						<ul class="space-y-2">
+						<ul class="space-y-3">
 							<li>
 								<a
 									href="https://linkedin.com/in/nategarrow"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
+									class="align-center text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
 								>
 									<Icon data={faLinkedin} class="text-blue-light size-6" /> <span> NateGarrow </span>
 								</a>
@@ -62,15 +62,27 @@
 									href="https://github.com/nategarrow"
 									target="_blank"
 									rel="noopener noreferrer"
-									class="text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
+									class="align-center text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
 								>
 									<Icon data={faGithub} class="text-blue-light size-6" /> <span>NateGarrow</span>
 								</a>
 							</li>
 							<li>
-								<span class="text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg">
+								<span
+									class="align-center text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
+								>
 									<Icon data={faAt} class="text-blue-light size-6" /> <span>nathan@nategarrow.tech</span>
 								</span>
+							</li>
+							<li>
+								<a
+									href="/2024 NTG Resume - Final.pdf"
+									target="_blank"
+									rel="noopener noreferrer"
+									class="align-center text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
+								>
+									<Icon data={faDownload} class="text-blue-light size-6" /> <span>2024 Resume</span>
+								</a>
 							</li>
 						</ul>
 					</div>
