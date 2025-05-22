@@ -76,12 +76,12 @@
 							</li>
 							<li>
 								<a
-									href="/2024 NTG Resume - Final.pdf"
+									href="/2025-resume.pdf"
 									target="_blank"
 									rel="noopener noreferrer"
 									class="align-center text-offwhite hover:text-orange-light flex items-center gap-2 space-x-2 text-lg"
 								>
-									<Icon data={faDownload} class="text-blue-light size-6" /> <span>2024 Resume</span>
+									<Icon data={faDownload} class="text-blue-light size-6" /> <span>2025 Resume</span>
 								</a>
 							</li>
 						</ul>
