@@ -9,17 +9,19 @@
 
 @theme {
 	/* *Fonts */
-	--font-family-georama: 'Georama Variable', sans-serif;
-	--font-family-monaspace-argon: 'Monaspace Argon', monospace;
+	--font-georama: 'Georama Variable', sans-serif;
+	--font-monaspace-argon: 'Monaspace Argon', monospace;
+	--font-germania-one: 'Germania One', serif;
+	--font-unbounded: 'Unbounded Variable', sans-serif;
 
-	--font-family-title: var(--font-family-georama);
-	--font-family-text: var(--font-family-georama);
-	--font-family-subtitle: var(--font-family-monaspace-argon);
-	--font-family-code: 'Monaspace Argon', monospace;
+	--font-title: var(--font-germania-one);
+	--font-subtitle: var(--font-unbounded);
+	--font-text: var(--font-georama);
+	--font-code: 'Monaspace Argon', monospace;
 
-	--font-family-serif: var(--font-family-title);
-	--font-family-sans: var(--font-family-text);
-	--font-family-mono: var(--font-family-code);
+	--font-serif: var(--font-title);
+	--font-sans: var(--font-text);
+	--font-mono: var(--font-code);
 
 	/* *Colors */
 	--color-white: #fffbfe;
@@ -38,9 +40,9 @@
 	--color-orange-light: #ff895a;
 	--color-orange-white: #f9cbbd;
 
-	--color-blue-0: #427AA100;
-	--color-blue-40: #427AA140;
-	--color-blue: #427AA1;
+	--color-blue-0: #427aa100;
+	--color-blue-40: #427aa140;
+	--color-blue: #427aa1;
 	--color-blue-light: #99acd4;
 
 	--color-purple-0: #7b6db200;
@@ -48,11 +50,10 @@
 	--color-purple: #7b6db2;
 	--color-purple-light: #aba2ce;
 
-	
 	--color-background: #04020a;
 	--color-background-blue: #0f172a;
 	--color-background-blue-0: #0f172a00;
-	
+
 	--color-card-background-0: #141c3200;
 	--color-card-background-20: #141c3220;
 	--color-card-background: #141c32;
@@ -72,7 +73,7 @@
 		font-size: 18px;
 		background-color: var(--color-background);
 		color: var(--color-offwhite);
-		font-family: var(--font-family-text);
+		font-family: var(--font-text);
 		letter-spacing: 0.03em;
 		font-weight: 300;
 		scroll-behavior: smooth;
@@ -111,5 +112,48 @@
 	.center-content {
 		display: grid;
 		place-items: center;
+	}
+
+	.gradient-text {
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		line-height: 1.15;
+	}
+
+	.styled-border-orange-top,
+	.styled-border-orange-bottom {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0%;
+			width: 100%;
+			height: 1px;
+			background: linear-gradient(
+				to right,
+				var(--color-orange-0),
+				var(--color-orange) 20%,
+				var(--color-orange) 80%,
+				var(--color-orange-0)
+			);
+
+			@media (min-width: 1199px) {
+				left: -5%;
+				width: 110%;
+			}
+		}
+	}
+
+	.styled-border-orange-top {
+		&::after {
+			top: 0;
+		}
+	}
+	.styled-border-orange-bottom {
+		&::after {
+			bottom: 0;
+		}
 	}
 }

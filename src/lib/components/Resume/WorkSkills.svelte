@@ -23,7 +23,7 @@
 </script>
 
 <div class="skills mx-auto w-full max-w-4xl space-y-8">
-	<h3 class="text-3xl font-medium lg:text-3xl">Skills</h3>
+	<h3 class="font-germania-one text-3xl font-medium lg:text-3xl">Skills</h3>
 	<div
 		class="skills-list flex flex-wrap gap-3"
 		use:dndzone={{ items, flipDurationMs, dropTargetStyle }}
@@ -35,7 +35,7 @@
 			<button
 				type="button"
 				animate:flip={{ duration: flipDurationMs }}
-				class="border-offwhite bg-blue-light/10 hover:bg-blue-light/20 md:text-md rounded-sm border py-0.5 px-2 text-sm text-blue-50 transition-all duration-150 xl:text-lg"
+				class="border-offwhite bg-blue-light/10 hover:bg-blue-light/20 md:text-md rounded-sm border px-2 py-0.5 text-sm text-blue-50 transition-all duration-150 xl:text-lg"
 				tabindex="-1"
 			>
 				{item.name}

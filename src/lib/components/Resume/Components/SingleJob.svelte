@@ -11,9 +11,9 @@
 
 <div
 	id={stringToKebabCase(company)}
-	class="work-item grid auto-rows-min grid-cols-2 items-center gap-2 border-b border-b-slate-300/50 py-4 px-2 md:px-6 lg:grid-cols-[3fr_1fr]"
+	class="work-item grid auto-rows-min grid-cols-2 items-center gap-2 border-b border-b-slate-300/50 px-2 py-4 md:px-6 lg:grid-cols-[3fr_1fr]"
 >
-	<h4 class="col-span-2 text-xl text-white md:col-span-1 md:col-start-1">{position}</h4>
+	<h4 class="font-subtitle col-span-2 text-xl text-white md:col-span-1 md:col-start-1">{position}</h4>
 	<p class="font-code text-blue text-md md:col-start-2 md:text-right">{company}</p>
 	{#if note}
 		<p
