@@ -11,7 +11,7 @@
 			name: {
 				react: 'shadow-blue/20 text-blue hover:text-blue-light',
 				svelte: 'shadow-orange/20 text-orange hover:text-orange-light',
-				gatsby: 'shadow-purple/20 text-purple hover:text-purple-light',
+				gatsby: 'shadow-violet/20 text-violet hover:text-violet-light',
 				nextjs: 'shadow-offwhite/20 text-offwhite hover:text-white',
 			},
 			size: {
@@ -31,7 +31,7 @@
 			name: {
 				react: 'from-blue-500 to-blue-100',
 				svelte: 'from-orange-500 to-orange-100',
-				gatsby: 'from-purple-500 to-purple-100',
+				gatsby: 'from-violet-500 to-violet-100',
 				nextjs: 'from-offwhite to-white',
 			},
 		},

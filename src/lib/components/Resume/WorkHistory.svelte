@@ -10,7 +10,7 @@
 </script>
 
 <div class="work-history mx-auto w-full max-w-4xl space-y-8 lg:space-y-6">
-	<h3 class="text-3xl font-medium lg:text-3xl">Experience</h3>
+	<h3 class="font-germania-one text-3xl font-medium lg:text-4xl">Experience</h3>
 	<div class="work-list">
 		{#each experiences as job}
 			<SingleJob {...job} />
