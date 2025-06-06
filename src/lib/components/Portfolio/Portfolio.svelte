@@ -19,12 +19,12 @@
 	);
 
 	const buttonClasses = cva(
-		'relative cursor-pointer flex-1 py-2 px-6 text-center rounded-xl font-bold text-xl tracking-wide gradient-text before:content-[""] before:absolute before:inset-0 before:-z-10 before:rounded-xl',
+		'flex justify-center flex-1 relative cursor-pointer w-full py-2 px-6 text-center rounded-xl font-bold text-xl  tracking-wide before:content-[""] before:absolute before:inset-0 before:rounded-xl',
 		{
 			variants: {
 				active: {
-					true: 'before:bg-linear-to-tr before:from-blue before:to-blue-light bg-background',
-					false: 'before:bg-transparent bg-linear-to-tr from-offwhite',
+					true: 'before:bg-linear-to-tr before:from-blue before:to-blue',
+					false: 'before:bg-transparent bg-linear-to-tr from-offwhite gradient-text',
 				},
 				accentColor: {
 					default: '',
@@ -43,7 +43,7 @@
 				{
 					active: false,
 					accentColor: 'red',
-					class: 'via-red-light/45 to-red-light/45',
+					class: 'via-orange/65 to-orange',
 				},
 				{
 					active: false,
@@ -58,7 +58,7 @@
 				{
 					active: false,
 					accentColor: 'purple',
-					class: 'via-purple/60 to-purple/60',
+					class: 'via-violet/60 to-violet/60',
 				},
 			],
 			defaultVariants: {
@@ -69,17 +69,18 @@
 	);
 </script>
 
-<section class="py-16">
-	<div class="border-wrap-top mx-auto max-w-7xl space-y-16 md:space-y-24">
-		<div id="project-list" class="flex flex-col gap-16 px-4">
-			<div class="border-blue-light/50 flex justify-between gap-4 rounded-2xl border p-2">
+<section id="portfolio" class="px-4 py-16">
+	<div class="border-wrap-top mx-auto max-w-7xl space-y-16 px-0 pt-4 md:space-y-24 md:px-8 md:pt-8">
+		<div id="project-list" class="flex flex-col gap-8 md:gap-16">
+			<div class="border-blue-light/50 flex justify-between gap-4 overflow-scroll rounded-2xl border p-2">
 				{#each projectHighlights as project, idx}
 					<button
 						class={buttonClasses({ active: activeClient === project.client, accentColor: project.customColor })}
 						aria-label={project.client}
-						class:isactive={activeClient === project.client}
-						onclick={() => (activeClient = project.client)}>{project.client}</button
+						onclick={() => (activeClient = project.client)}
 					>
+						<span class="text-background relative z-20 block w-max">{project.client}</span>
+					</button>
 				{/each}
 			</div>
 			<div>
@@ -93,22 +94,23 @@
 <style>
 	.border-wrap-top {
 		position: relative;
-		padding: 2rem 1rem 1rem;
 
-		&:before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			border-radius: 1.5rem;
-			padding: 1.5px;
-			background: linear-gradient(to bottom, var(--color-orange), transparent);
-			-webkit-mask:
-				linear-gradient(#fff 0 0) content-box,
-				linear-gradient(#fff 0 0);
-			-webkit-mask-composite: xor;
-			mask-composite: exclude;
-			pointer-events: none;
-			z-index: 1;
+		@media (min-width: 768px) {
+			&:before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border-radius: 1.5rem;
+				padding: 1.5px;
+				background: linear-gradient(to bottom, var(--color-orange), transparent 80%);
+				-webkit-mask:
+					linear-gradient(#fff 0 0) content-box,
+					linear-gradient(#fff 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				pointer-events: none;
+				z-index: 1;
+			}
 		}
 	}
 </style>

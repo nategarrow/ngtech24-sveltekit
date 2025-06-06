@@ -22,8 +22,8 @@
 	}
 </script>
 
-<div class="skills mx-auto w-full max-w-4xl space-y-8">
-	<h3 class="font-germania-one text-3xl font-medium lg:text-3xl">Skills</h3>
+<div class="skills mx-auto w-full space-y-8">
+	<h3 class="font-germania-one text-3xl font-medium lg:text-4xl">Skills</h3>
 	<div
 		class="skills-list flex flex-wrap gap-3"
 		use:dndzone={{ items, flipDurationMs, dropTargetStyle }}

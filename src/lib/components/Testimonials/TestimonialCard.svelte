@@ -5,22 +5,24 @@
 	const { id, name, role, company, imageUrl, quote }: TestimonialType = $props();
 </script>
 
-<div id={id || ''} class="autoBlur testimonial-card p-3 md:p-8 xl:p-16">
-	<div class="space-y-4 lg:space-y-6">
+<div id={id || ''} class="testimonial-card w-full p-3 md:p-8 xl:px-32">
+	<div class="space-y-8 lg:space-y-12">
 		{#if quote}
-			<div class="quote-text whitespace-pre-line text-lg font-normal leading-relaxed tracking-wide">
+			<div class="quote-text text-lg leading-relaxed font-normal tracking-wide whitespace-pre-line">
 				<PortableText value={quote} />
 			</div>
 		{/if}
-		<div class="flex items-center gap-4">
-			<div class="image-wrapper grid size-12 place-items-center overflow-hidden rounded-full bg-white p-3 lg:size-16">
+		<div class="flex items-center justify-center gap-4">
+			<div
+				class="image-wrapper bg-card-background grid aspect-square size-12 place-items-center overflow-hidden rounded-full p-3 lg:size-16"
+			>
 				{#if imageUrl}
 					<img src={imageUrl} alt={name} class="size-full" />
 				{/if}
 			</div>
-			<p class="flex flex-col gap-2 text-xl">
-				<span class="font-medium tracking-wider text-white">{name}</span>
-				<span class="font-code text-slate align-bottom text-sm">{role}, {company}</span>
+			<p class="flex flex-col text-xl">
+				<span class="font-title font-medium tracking-wider text-white">{name}</span>
+				<span class="font-code text-slate align-bottom text-xs md:text-sm">{role}, {company}</span>
 			</p>
 		</div>
 	</div>
@@ -36,6 +38,6 @@
 	}
 
 	:global(.quote-text strong) {
-		color: var(--color-orange-white);
+		color: var(--color-orange);
 	}
 </style>
