@@ -18,68 +18,34 @@
 		projectHighlights.find(project => project.client === activeClient) || projectHighlights[0]
 	);
 
-	const buttonClasses = cva(
-		'flex justify-center flex-1 relative cursor-pointer w-full py-2 px-6 text-center rounded-xl font-bold text-xl  tracking-wide before:content-[""] before:absolute before:inset-0 before:rounded-xl',
-		{
-			variants: {
-				active: {
-					true: 'before:bg-linear-to-tr before:from-blue before:to-blue',
-					false: 'before:bg-transparent bg-linear-to-tr from-offwhite gradient-text',
-				},
-				accentColor: {
-					default: '',
-					red: '',
-					green: '',
-					blue: '',
-					purple: '',
-				},
-			},
-			compoundVariants: [
-				{
-					active: false,
-					accentColor: 'default',
-					class: 'via-blue-light/65 to-blue-light/65',
-				},
-				{
-					active: false,
-					accentColor: 'red',
-					class: 'via-orange/65 to-orange',
-				},
-				{
-					active: false,
-					accentColor: 'green',
-					class: 'via-green-200/65 to-green-200/65',
-				},
-				{
-					active: false,
-					accentColor: 'blue',
-					class: 'via-blue-light/65 to-blue-light/65',
-				},
-				{
-					active: false,
-					accentColor: 'purple',
-					class: 'via-violet/60 to-violet/60',
-				},
-			],
-			defaultVariants: {
-				active: false,
-				accentColor: 'default',
-			},
-		}
-	);
+	const companyLogos = {
+		deepgram: '/images/deepgram-logo.svg',
+		webstacks: '/images/webstacks-logo.svg',
+		semgrep: '/images/semgrep-logo.svg',
+		arcesium: '/images/arcesium-logo.svg',
+	} as const;
 </script>
 
 <section id="portfolio" class="px-4 py-16">
-	<div class="border-wrap-top mx-auto max-w-7xl space-y-16 px-0 pt-4 md:space-y-24 md:px-8 md:pt-8">
+	<div class="border-wrap-top mx-auto max-w-5xl space-y-16 px-0 pt-4 md:space-y-24 md:px-8 md:pt-8">
 		<div id="project-list" class="flex flex-col gap-8 md:gap-16">
 			<div class="border-blue-light/50 flex justify-between gap-4 overflow-scroll rounded-2xl border p-2">
 				{#each projectHighlights as project, idx}
 					<button
-						class={buttonClasses({ active: activeClient === project.client, accentColor: project.customColor })}
+						class="[.isactive]:bg-card-background relative flex w-full flex-1 cursor-pointer items-center justify-center rounded-xl px-6 py-2 text-center text-xl font-bold tracking-wide before:absolute before:inset-0 before:rounded-xl before:content-['']"
 						aria-label={project.client}
+						class:isactive={activeClient === project.client}
 						onclick={() => (activeClient = project.client)}
 					>
-						<span class="text-background relative z-20 block w-max">{project.client}</span>
+						{#if companyLogos[project.client.toLowerCase() as keyof typeof companyLogos]}
+							<img
+								src={companyLogos[project.client.toLowerCase() as keyof typeof companyLogos]}
+								alt={project.client}
+								class="h-6"
+							/>
+						{:else}
+							<span class="relative z-20 block w-max">{project.client}</span>
+						{/if}
 					</button>
 				{/each}
 			</div>

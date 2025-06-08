@@ -9,7 +9,7 @@
 </script>
 
 <section id="success-stories" class="relative z-[1] mt-8 md:mt-28">
-	<div class="mx-auto max-w-7xl space-y-12 px-4 lg:space-y-16">
+	<div class="mx-auto max-w-6xl space-y-12 px-4 lg:space-y-16">
 		{#if testimonials}
 			<div
 				class="splide-wrapper styled-border-blue-top styled-border-blue-bottom mx-auto flex flex-col flex-wrap gap-6 py-16 md:flex-row"

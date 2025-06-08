@@ -28,6 +28,14 @@
 			const scrollPosition = window.scrollY + window.innerHeight;
 			const pageHeight = document.documentElement.scrollHeight;
 
+			if (scrollPosition === 0) {
+				const firstSection = [...sections].at(0);
+				const firstId = firstSection?.id;
+				if (firstId) {
+					console.log('manually activating at bottom:', firstId);
+					activeNavItem = firstId;
+				}
+			}
 			if (scrollPosition >= pageHeight - 1) {
 				const lastSection = [...sections].at(-1);
 				const lastId = lastSection?.id;
@@ -65,7 +73,7 @@
 <header class="fixed top-0 left-0 z-50 w-full backdrop-blur-xs">
 	<div class="mx-auto max-w-7xl px-6">
 		<div class="mx-auto flex w-full items-center justify-center px-4 py-5 lg:justify-between">
-			<span class="font-germania-one flex-1 text-xl font-medium text-white lg:text-2xl">NG</span>
+			<span class="font-germania-one flex-1 text-xl font-medium text-white lg:text-3xl">NG</span>
 			<div class="nav-wrapper hidden w-full flex-1 items-center justify-center gap-4 lg:flex">
 				<div class="bg-card-background flex items-center gap-6 rounded-2xl p-2">
 					<nav>
@@ -92,6 +100,7 @@
 				<a
 					href={PUBLIC_RESUME_FILENAME}
 					title="Resume"
+					target="_blank"
 					class="btn bg-violet font-subtitle text-offwhite text-sm hover:bg-violet-600"
 				>
 					View Resume
@@ -104,7 +113,6 @@
 <main>
 	{@render children()}
 	<div class="dark-star fixed"></div>
-	<div class="super-circ"></div>
 </main>
 
 <style>
@@ -126,44 +134,6 @@
 
 		&.active {
 			background: var(--color-violet);
-		}
-	}
-	.super-circ {
-		--color-start: oklch(var(--background-oklch) / 0%) 34%;
-		--color-1: oklch(var(--background-oklch) / 50%) 34%;
-		--color-2: oklch(var(--violet-400-oklch) / 35%) 38.5%;
-		--color-3: oklch(var(--background-oklch) / 20%) 39%;
-		--color-4: oklch(var(--violet-oklch) / 60%) 42.5%;
-		--color-5: oklch(var(--white-oklch) / 70%) 43%;
-		--color-end: var(--color-card-background-0) 44%;
-
-		position: absolute;
-		top: 550px;
-		left: 0;
-		background: radial-gradient(
-			350% 220% at 50% 100%,
-			var(--color-start),
-			var(--color-1),
-			var(--color-2),
-			var(--color-4),
-			var(--color-5),
-			var(--color-end)
-		);
-		width: 100%;
-		height: 50svh;
-		z-index: -1;
-
-		@media (min-width: 768px) {
-			top: min(800px, 50vh);
-			background: radial-gradient(
-				285% 220% at 50% 100%,
-				var(--color-start),
-				var(--color-1),
-				var(--color-2),
-				var(--color-4),
-				var(--color-5),
-				var(--color-end)
-			);
 		}
 	}
 

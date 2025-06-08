@@ -40,8 +40,8 @@
 	});
 </script>
 
-<section id="about-me" class="relative z-[1] pt-14 pb-24 lg:pt-24 lg:pb-36">
-	<div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 md:pt-20 lg:flex-row lg:gap-10 lg:pt-40">
+<section id="about-me" class="relative z-[1] pt-14 pb-24 lg:pt-24 lg:pb-32">
+	<div class="mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 lg:flex-row lg:gap-10">
 		<div class="grid-rows-auto grid grid-cols-1 gap-8 lg:grid-cols-[1fr_2fr] lg:gap-16">
 			<h2 class="font-title text-3xl font-medium lg:text-4xl">About Me</h2>
 			<div class="col-start-1 row-start-3 content-end lg:row-start-2"><ProfileCard /></div>
