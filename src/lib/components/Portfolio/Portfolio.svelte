@@ -29,10 +29,10 @@
 <section id="portfolio" class="px-4 py-16">
 	<div class="border-wrap-top mx-auto max-w-5xl space-y-16 px-0 pt-4 md:space-y-24 md:px-8 md:pt-8">
 		<div id="project-list" class="flex flex-col gap-8 md:gap-16">
-			<div class="border-blue-light/50 flex justify-between gap-4 overflow-scroll rounded-2xl border p-2">
+			<div class="border-blue-light/50 flex justify-between gap-4 overflow-auto rounded-2xl border p-2">
 				{#each projectHighlights as project, idx}
 					<button
-						class="[.isactive]:bg-card-background relative flex w-full flex-1 cursor-pointer items-center justify-center rounded-xl px-6 py-2 text-center text-xl font-bold tracking-wide before:absolute before:inset-0 before:rounded-xl before:content-['']"
+						class="[.isactive]:bg-card-background relative flex w-full flex-1 cursor-pointer items-center justify-center rounded-xl px-4 py-1 text-center text-xl font-bold tracking-wide before:absolute before:inset-0 before:rounded-xl before:content-[''] md:py-2"
 						aria-label={project.client}
 						class:isactive={activeClient === project.client}
 						onclick={() => (activeClient = project.client)}
@@ -41,7 +41,7 @@
 							<img
 								src={companyLogos[project.client.toLowerCase() as keyof typeof companyLogos]}
 								alt={project.client}
-								class="h-6"
+								class="h-8 w-full md:h-6"
 							/>
 						{:else}
 							<span class="relative z-20 block w-max">{project.client}</span>
