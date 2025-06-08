@@ -6,11 +6,11 @@
 </script>
 
 <div class="profile-card relative w-full max-w-3xl">
-	<div class="bg-card-background shadow-blue-light/10 flex flex-col gap-4 rounded-xl p-3 shadow-2xl md:p-6">
+	<div class="bg-card-background shadow-blue/15 flex flex-col gap-4 rounded-xl p-3 shadow-2xl md:p-6">
 		<div class="flex items-center gap-4">
-			<div class="flex flex-1 flex-col">
-				<p class="text-xl font-medium text-white md:text-2xl">{`<Nate Garrow />`}</p>
-				<p class="font-code text-blue-light mt-0 text-xs">Senior Frontend Software Engineer</p>
+			<div class="flex flex-1 flex-col gap-1">
+				<p class="font-subtitle text-xl text-white">{`<LetsChat />`}</p>
+				<p class="font-code text-blue-light mt-0 text-xs">I'm currently open to work!</p>
 			</div>
 		</div>
 		<div class="social-media">
