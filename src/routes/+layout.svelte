@@ -1,4 +1,6 @@
 <script>
+	import { afterNavigate } from '$app/navigation';
+
 	import '@styles/theme.css';
 	import '@styles/animations.css';
 	import '@fontsource-variable/georama';
@@ -20,53 +22,81 @@
 	let activeNavItem = $state('home');
 
 	// Add event listener for <section> elements with an ID matching the href hash of the nav
-	onMount(() => {
-		const sections = document.querySelectorAll('section[id]');
-		const navLinks = document.querySelectorAll('.nav-wrapper a');
+	/** @type {(() => void) | undefined} */
+	let cleanup;
 
-		window.addEventListener('scroll', () => {
-			const scrollPosition = window.scrollY + window.innerHeight;
-			const pageHeight = document.documentElement.scrollHeight;
+	function setupNavHighlighting() {
+		if (cleanup) cleanup();
 
-			if (scrollPosition === 0) {
-				const firstSection = [...sections].at(0);
-				const firstId = firstSection?.id;
-				if (firstId) {
-					console.log('manually activating at bottom:', firstId);
-					activeNavItem = firstId;
-				}
-			}
-			if (scrollPosition >= pageHeight - 1) {
-				const lastSection = [...sections].at(-1);
-				const lastId = lastSection?.id;
-				if (lastId) {
-					console.log('manually activating at bottom:', lastId);
-					activeNavItem = lastId;
-				}
-			}
-		});
+		if (window.location.pathname === '/') {
+			const sections = document.querySelectorAll('section[id]');
+			const navLinks = document.querySelectorAll('.nav-wrapper a');
 
-		const observer = new IntersectionObserver(
-			entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						const id = entry.target.id;
+			const onScroll = () => {
+				const scrollPosition = window.scrollY;
+				const viewportHeight = window.innerHeight;
+				const pageHeight = document.documentElement.scrollHeight;
 
-						navLinks.forEach(link => {
-							if (link.getAttribute('href') === `#${id}`) {
-								console.log('changing to ', id);
-								activeNavItem = id;
-							}
-						});
+				if (scrollPosition === 0) {
+					const firstSection = [...sections].at(0);
+					const firstId = firstSection?.id;
+					if (firstId) {
+						activeNavItem = firstId;
 					}
-				});
-			},
-			{ rootMargin: '-30% 0px -70% 0px' }
-		);
+				}
+				if (scrollPosition + viewportHeight >= pageHeight - 1) {
+					const lastSection = [...sections].at(-1);
+					const lastId = lastSection?.id;
 
-		sections.forEach(section => {
-			observer.observe(section);
-		});
+					if (lastId) {
+						activeNavItem = lastId;
+					}
+				}
+			};
+
+			window.addEventListener('scroll', onScroll);
+
+			const observer = new IntersectionObserver(
+				entries => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							const id = entry.target.id;
+
+							navLinks.forEach(link => {
+								if (link.getAttribute('href') === `/#${id}`) {
+									activeNavItem = id;
+								}
+							});
+						}
+					});
+				},
+				{ rootMargin: '-30% 0px -70% 0px' }
+			);
+
+			sections.forEach(section => {
+				observer.observe(section);
+			});
+
+			cleanup = () => {
+				window.removeEventListener('scroll', onScroll);
+				sections.forEach(section => observer.unobserve(section));
+				observer.disconnect();
+			};
+		} else if (window.location.pathname === '/portfolio') {
+			activeNavItem = 'portfolio';
+			cleanup = () => {
+				activeNavItem = 'home';
+			};
+		}
+	}
+
+	onMount(() => {
+		setupNavHighlighting();
+		afterNavigate(setupNavHighlighting);
+
+		return () => {
+			if (cleanup) cleanup();
+		};
 	});
 </script>
 
@@ -75,24 +105,29 @@
 		<div class="mx-auto flex w-full items-center justify-center px-4 py-5 lg:justify-between">
 			<span class="font-germania-one flex-1 text-xl font-medium text-white lg:text-3xl">NG</span>
 			<div class="nav-wrapper hidden w-full flex-1 items-center justify-center gap-4 lg:flex">
-				<div class="bg-card-background flex items-center gap-6 rounded-2xl p-2">
-					<nav>
-						<ul class="flex w-fit flex-col gap-4 text-right text-sm text-white lg:flex-row lg:gap-2 lg:text-center">
+				<div class="flex items-center gap-6 p-2">
+					<nav class="flex gap-4">
+						<ul
+							class="bg-card-background flex w-fit flex-col gap-4 rounded-2xl text-right text-sm text-white lg:flex-row lg:gap-2 lg:text-center"
+						>
 							<li class="flex justify-end lg:justify-center">
-								<a class:active={activeNavItem === 'home'} class="nav-item" href="#home">Home</a>
+								<a class:active={activeNavItem === 'home'} class="nav-item" href="/">Home</a>
 							</li>
 							<li class="flex justify-end lg:justify-center">
-								<a class:active={activeNavItem === 'about-me'} class="nav-item" href="#about-me">About Me</a>
+								<a class:active={activeNavItem === 'about-me'} class="nav-item" href="/#about-me">About Me</a>
 							</li>
+
 							<li class="flex justify-end lg:justify-center">
-								<a class:active={activeNavItem === 'portfolio'} class="nav-item" href="#portfolio">Portfolio</a>
-							</li>
-							<li class="flex justify-end lg:justify-center">
-								<a class:active={activeNavItem === 'success-stories'} class="nav-item" href="#success-stories"
+								<a class:active={activeNavItem === 'success-stories'} class="nav-item" href="/#success-stories"
 									>Success Stories</a
 								>
 							</li>
 						</ul>
+						<a
+							class:active={activeNavItem === 'portfolio'}
+							class="nav-item bg-card-background rounded-2xl"
+							href="/portfolio">Portfolio</a
+						>
 					</nav>
 				</div>
 			</div>
