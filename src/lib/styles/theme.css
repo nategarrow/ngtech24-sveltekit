@@ -270,7 +270,7 @@
 	}
 
 	.btn {
-		padding: 0.75em 2em;
+		padding: 0.65em 1.5em;
 		border-radius: 8px;
 
 		&:not(:disabled) {
