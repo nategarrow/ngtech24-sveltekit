@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="super-circ"></div>
+	<div class="super-circ top-[80%]"></div>
 </section>
 
 <style>
@@ -41,44 +41,5 @@
 			var(--color-white) 35%,
 			var(--color-slate) 100%
 		);
-	}
-	.super-circ {
-		position: absolute;
-		top: 80%;
-		left: 0%;
-		overflow: hidden;
-		z-index: 1;
-		width: 100%;
-		height: 350px;
-
-		&:after {
-			--color-start: oklch(var(--background-oklch) / 0%) 38%;
-			--color-1: oklch(var(--background-oklch) / 10%) 60%;
-			--color-2: oklch(var(--blue-oklch) / 25%) 76%;
-			--color-3: oklch(var(--violet-oklch) / 15%) 90%;
-			--color-4: oklch(var(--violet-oklch) / 15%) 94%;
-			--color-5: oklch(var(--white-oklch) / 70%) 95%;
-			--color-end: oklch(var(--background-oklch) / 1%);
-
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 50%;
-			width: 100%;
-			height: 100%;
-			min-width: 1250px;
-			transform: translateX(-50%);
-
-			background: radial-gradient(
-				100% 100% at 50% 100%,
-				var(--color-start),
-				var(--color-1),
-				var(--color-2),
-				var(--color-3),
-				var(--color-4),
-				var(--color-5),
-				var(--color-end)
-			);
-		}
 	}
 </style>
