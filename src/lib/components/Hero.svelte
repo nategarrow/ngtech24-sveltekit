@@ -4,7 +4,7 @@
 	const { heroContent } = $props();
 </script>
 
-<section id="home" class="center-content relative overflow-hidden pt-40 pb-32 md:pb-28 lg:pt-48 lg:pb-40">
+<section id="home" class="center-content relative pt-40 pb-32 md:pb-28 lg:pt-48 lg:pb-48">
 	<div class="relative z-10 w-full max-w-5xl px-3">
 		<div class="mx-auto grid auto-rows-min grid-cols-1 items-center gap-y-4">
 			<div class="flex flex-col items-center justify-center">
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="super-circ"></div>
+	<div class="super-circ top-[80%]"></div>
 </section>
 
 <style>
@@ -41,30 +41,5 @@
 			var(--color-white) 35%,
 			var(--color-slate) 100%
 		);
-	}
-	.super-circ {
-		--color-start: oklch(var(--background-oklch) / 0%) 34%;
-		--color-1: oklch(var(--background-oklch) / 50%) 34%;
-		--color-2: oklch(var(--violet-400-oklch) / 35%) 38.5%;
-		--color-3: oklch(var(--background-oklch) / 20%) 39%;
-		--color-4: oklch(var(--violet-oklch) / 60%) 42.5%;
-		--color-5: oklch(var(--white-oklch) / 70%) 43%;
-		--color-end: var(--color-card-background-0) 44%;
-
-		position: absolute;
-		top: 75%;
-		left: 0;
-		z-index: 1;
-		background: radial-gradient(
-			250% 100% at center,
-			var(--color-start),
-			var(--color-1),
-			var(--color-2),
-			var(--color-4),
-			var(--color-5),
-			var(--color-end)
-		);
-		width: 100%;
-		height: 100%;
 	}
 </style>
