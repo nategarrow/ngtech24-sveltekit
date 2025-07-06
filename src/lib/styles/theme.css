@@ -120,7 +120,7 @@
 	}
 
 	.bg-static {
-		position: absolute;
+		position: fixed;
 		inset: 0;
 		width: 100%;
 		height: 100%;
@@ -134,7 +134,7 @@
 			background-image: url(/src/lib/assets/static-square.png);
 			background-size: 128px;
 			background-repeat: repeat;
-			opacity: 0.05;
+			opacity: 0.0625;
 		}
 	}
 

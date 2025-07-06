@@ -20,7 +20,7 @@
 			<div class="relative z-10 md:row-span-2">
 				<div class="flex h-full flex-col justify-between gap-8">
 					<div>
-						<p class="font-title mb-4 text-base font-light tracking-wide text-white md:text-lg">{client}</p>
+						<p class="font-title mb-4 text-base font-light tracking-wide text-white md:text-lg lg:text-xl">{client}</p>
 						<h3 class="font-subtitle text-xl font-medium tracking-tight text-white md:text-2xl">{title}</h3>
 						<p class="text-offwhite mt-4 text-base">
 							{description}

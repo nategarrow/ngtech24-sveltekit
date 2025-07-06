@@ -28,7 +28,7 @@
 
 <section id="portfolio" class="px-4 py-16">
 	<div class="border-wrap-top mx-auto max-w-5xl space-y-16 px-0 pt-4 md:space-y-24 md:px-8 md:pt-8">
-		<div id="project-list" class="flex flex-col gap-8 md:gap-16">
+		<div id="project-list" class="flex flex-col gap-8 md:gap-10">
 			<div class="border-blue-light/50 flex justify-between gap-4 overflow-auto rounded-2xl border p-2">
 				{#each projectHighlights as project, idx}
 					<button
