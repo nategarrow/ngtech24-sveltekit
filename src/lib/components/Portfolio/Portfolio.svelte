@@ -32,7 +32,7 @@
 			<div class="border-blue-light/50 flex justify-between gap-4 overflow-auto rounded-2xl border p-2">
 				{#each projectHighlights as project, idx}
 					<button
-						class="[.isactive]:bg-card-background relative flex w-full flex-1 cursor-pointer items-center justify-center rounded-xl px-4 py-1 text-center text-xl font-bold tracking-wide before:absolute before:inset-0 before:rounded-xl before:content-[''] md:py-2"
+						class="[.isactive]:bg-card-background relative flex w-full flex-1 cursor-pointer items-center justify-center rounded-xl px-4 py-1 text-center text-xl font-bold tracking-wide opacity-50 transition-opacity duration-150 before:absolute before:inset-0 before:rounded-xl before:content-[''] md:py-2 [.isactive]:opacity-100"
 						aria-label={project.client}
 						class:isactive={activeClient === project.client}
 						onclick={() => (activeClient = project.client)}
