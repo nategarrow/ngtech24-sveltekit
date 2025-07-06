@@ -18,7 +18,7 @@
 						>Nate Garrow</span
 					>
 				</h1>
-				<span class="font-subtitle gradient-text text-xl md:text-3xl lg:text-4xl">Senior Frontend Web Developer</span>
+				<span class="font-subtitle gradient-text text-xl md:text-3xl lg:text-4xl">Frontend Software Engineer</span>
 			</div>
 
 			<div class="mx-auto max-w-lg flex-1 space-y-6 text-center">
