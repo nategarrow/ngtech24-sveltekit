@@ -101,7 +101,7 @@
 					href={PUBLIC_RESUME_FILENAME}
 					title="Resume"
 					target="_blank"
-					class="btn bg-violet font-subtitle text-offwhite text-sm hover:bg-violet-600"
+					class="btn bg-violet font-subtitle text-offwhite text-xs hover:bg-violet-600 md:text-sm"
 				>
 					View Resume
 				</a>

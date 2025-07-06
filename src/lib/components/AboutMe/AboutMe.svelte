@@ -17,26 +17,25 @@
 
 	let { aboutContent, aboutStats }: Props = $props();
 
+	let statsListEl: HTMLElement;
+
 	onMount(() => {
-		const stats = document.querySelectorAll('.stat');
+		if (!statsListEl) return;
 
-		if (!!Array.from(stats)?.length) {
-			Array.from(stats).forEach((stat, i) => {
-				const statCounterEl = stat.querySelector('.stat-counter') as HTMLElement;
-				if (statCounterEl) {
-					const endValue = Number(statCounterEl.getAttribute('data-value'));
-					console.log(' endValue:', endValue);
+		const statEls = statsListEl.querySelectorAll('.stat-counter');
+		inView(statsListEl, () => {
+			statEls.forEach((statCounterEl, i) => {
+				const endValue = Number(statCounterEl.getAttribute('data-value'));
 
-					inView('#stats-list', () => {
-						animate((progress: number) => (statCounterEl.innerHTML = Math.round(progress * endValue).toString()), {
-							duration: 1.75,
-							delay: i * 0.325,
-							easing: [0.35, 0.79, 0.71, 1],
-						});
-					});
-				}
+				animate(endValue / 3, endValue, {
+					duration: 1.75,
+					ease: [0, 0.93, 0.4, 1],
+					onUpdate: latest => {
+						statCounterEl.innerHTML = Math.round(latest).toString();
+					},
+				});
 			});
-		}
+		});
 	});
 </script>
 
@@ -51,23 +50,22 @@
 						<PortableText value={aboutContent} />
 					{/if}
 				</div>
-				{#if !!aboutStats?.length}
-					<div
-						id="stats-list"
-						class="mx-auto mt-10 flex w-full flex-wrap items-center justify-between gap-x-6 gap-y-10 lg:mt-12"
-					>
-						{#each aboutStats as stat}
-							<div class="flex flex-1 flex-col">
-								<span class="stat font-code flex text-4xl font-bold lg:text-5xl">
-									<span>{stat?.valuePrefix || ''}</span>
-									<span data-value={stat.value} class="stat-counter">{stat.value}</span>
-									<span>{stat?.valueSuffix || ''}</span>
-								</span>
-								<span class="font-subtitle text-orange-white text-base">{stat.title}</span>
-							</div>
-						{/each}
-					</div>
-				{/if}
+				<div
+					id="stats-list"
+					bind:this={statsListEl}
+					class="mx-auto mt-10 flex w-full flex-wrap items-center justify-between gap-x-6 gap-y-10 lg:mt-12"
+				>
+					{#each aboutStats as stat}
+						<div class="flex flex-1 flex-col">
+							<span class="stat font-code flex text-4xl font-bold lg:text-5xl">
+								<span>{stat?.valuePrefix || ''}</span>
+								<span data-value={stat.value} class="stat-counter">{0}</span>
+								<span>{stat?.valueSuffix || ''}</span>
+							</span>
+							<span class="font-subtitle text-orange-white text-base">{stat.title}</span>
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
