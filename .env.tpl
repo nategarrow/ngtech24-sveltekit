@@ -4,4 +4,4 @@ SANITY_API_READ_TOKEN={{ op://NGTech/ngtech-portfolio.env/prod/sanity-read-token
 PUBLIC_SANITY_API_VERSION={{ op://NGTech/ngtech-portfolio.env/prod/sanity-api-version }}
 PUBLIC_SANITY_STUDIO_URL={{ op://NGTech/ngtech-portfolio.env/prod/sanity-studio-url }}
 
-PUBLIC_RESUME_FILENAME=/20250606-nategarrow-resume.pdf
+PUBLIC_RESUME_FILENAME=/nategarrow-resume.pdf
