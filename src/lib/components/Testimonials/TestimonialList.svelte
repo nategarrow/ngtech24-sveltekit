@@ -14,7 +14,11 @@
 			<div
 				class="splide-wrapper styled-border-blue-top styled-border-blue-bottom mx-auto flex flex-col flex-wrap gap-6 py-16 md:flex-row"
 			>
-				<Splide hasTrack={false} options={{ type: "fade", rewind: true, autoplay: true, interval: 6000 }} class="w-full pb-8 md:pb-2">
+				<Splide
+					hasTrack={false}
+					options={{ type: 'fade', rewind: true, autoplay: true, interval: 6000 }}
+					class="w-full pb-8 md:pb-2"
+				>
 					<SplideTrack>
 						{#each testimonials as testimonial}
 							<SplideSlide class="flex items-center">
