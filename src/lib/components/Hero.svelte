@@ -30,7 +30,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="super-circ top-[80%]"></div>
 </section>
 
 <style>
